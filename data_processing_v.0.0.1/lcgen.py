@@ -4,7 +4,8 @@ import os
 import pandas as pd
 
 # reads in .dat file along with output directory
-def get_lc(file, name, input, output):
+# target is what the class label in the ASAS-SN dataset is
+def get_lc(file, name, target, input, output):
     if file.endswith('.dat'):
         #try:
         # create dataframe
@@ -24,7 +25,7 @@ def get_lc(file, name, input, output):
             plt.xlabel('time (HJD)', fontsize=14)
             plt.ylabel('mag', fontsize=14)
             plt.title('lightcurve for object ' + name, fontsize=16)
-            plt.savefig(output+'/lc_%s.jpeg'%name)
+            plt.savefig(output+'/'+target+'lc_%s.jpeg'%name)
         else:
             print('err: max err value %f exceeds 5 mag limit'%max(mag_err))
         # except:
