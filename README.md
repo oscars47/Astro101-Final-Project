@@ -7,3 +7,5 @@ A repo for @ghirsch123 and @oscars47's astro101 final project (Phil Choi, Pomona
 3. Using what we’ve learned with unsupervised clustering in step 2,we will  investigate some more well-studied class of variable object with distinct sub-classes (e.g., Cepheids).
 4. Using our experience with step 3, we can apply these techniques to the Drake data to investigate contact binary features.
 
+## Data products:
+Link to datasets generated via the data_processing pipeline: https://drive.google.com/drive/folders/1PgVBjVWzdmSGbx42nixHeabedoXOK9Cl?usp=sharing
