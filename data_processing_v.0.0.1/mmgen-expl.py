@@ -115,7 +115,19 @@ test_ls = [hads, ea, rot]
 
 
 # create new df --- the monster matrix --- to hold results of Variable obj
-mm_df = pd.DataFrame({
+mm_df_per = pd.DataFrame({
+         'id': [], 'target': [], 'periodic': [],'mad': [], 'weighted mean': [],
+            'chi2red': [], 'weighted stdev': [], 
+            'iqr': [], 'roms': [], 'norm excess var': [], 
+            'peak peak var': [], 'lag1 auto': [],
+            'I': [],'Ifi': [], 'J': [], 'K': [], 'L': [],
+            'J time': [], 'I clipped': [],
+            'J clipped': [], 'CSSD': [],
+            'Ex': [], 'eta ratio': [], 
+            'SB': [],'clipped stdev': [] 
+        })
+
+mm_df_irreg = pd.DataFrame({
          'id': [], 'target': [], 'periodic': [],'mad': [], 'weighted mean': [],
             'chi2red': [], 'weighted stdev': [], 
             'iqr': [], 'roms': [], 'norm excess var': [], 
@@ -163,24 +175,32 @@ def run_test(test_ls, mm_df):
 #mm_df = run_test(test_ls, mm_df)
 
 # for complete dataset
-def run_full(mm_df):
-    #f irst do periodic
+def run_per(mm_df):
+    # first do periodic
     isper = 1
     per_ls = os.listdir(FOLD_DIR)
     for i in tqdm(range(len(per_ls)), desc='progress on periodic...', position=0, leave=True):
         file = per_ls[i]
         mm_df = get_var_data_file(mm_df, file, isper, FOLD_DIR)
 
-    # then do non-periodic
+    return mm_df
+
+def run_irreg(mm_df):
+       # then do non-periodic
     isper = 0
-    per_ls = os.listdir(FOLD_DIR)
-    for i in tqdm(range(len(per_ls)), desc='progress on non-periodic...', position=0, leave=True):
-        file = per_ls[i]
+    irreg_ls = os.listdir(IRREG_DIR)
+    for i in tqdm(range(len(irreg_ls)), desc='progress on non-periodic...', position=0, leave=True):
+        file = irreg_ls[i]
         mm_df = get_var_data_file(mm_df, file, isper, IRREG_DIR)
+
+    return mm_df
     
-mm_df = run_full(mm_df)
+#mm_df_per = run_per(mm_df_per)
+mm_df_irreg = run_irreg(mm_df_irreg)
 
 # save results!
 print('saving results!')
-mm_name='folded_mm.csv'
-mm_df.to_csv(os.path.join(VAR_OUT, mm_name))
+mm_per_name='folded_mm_per.csv'
+mm_irreg_name = 'folded_mm_irreg.csv'
+#mm_df_per.to_csv(os.path.join(VAR_OUT, mm_per_name))
+mm_df_irreg.to_csv(os.path.join(VAR_OUT, mm_irreg_name))
