@@ -194,13 +194,63 @@ def run_irreg(mm_df):
         mm_df = get_var_data_file(mm_df, file, isper, IRREG_DIR)
 
     return mm_df
-    
-#mm_df_per = run_per(mm_df_per)
-mm_df_irreg = run_irreg(mm_df_irreg)
 
-# save results!
-print('saving results!')
-mm_per_name='folded_mm_per.csv'
-mm_irreg_name = 'folded_mm_irreg.csv'
-#mm_df_per.to_csv(os.path.join(VAR_OUT, mm_per_name))
-mm_df_irreg.to_csv(os.path.join(VAR_OUT, mm_irreg_name))
+# run these lines to call the data generation functs    
+# mm_df_per = run_per(mm_df_per)
+# mm_df_irreg = run_irreg(mm_df_irreg)
+
+# save un-normalized results
+def save_un():
+    print('saving results!')
+    mm_per_name='folded_mm_per.csv'
+    mm_irreg_name = 'folded_mm_irreg.csv'
+    mm_df_per.to_csv(os.path.join(VAR_OUT, mm_per_name))
+    mm_df_irreg.to_csv(os.path.join(VAR_OUT, mm_irreg_name))
+
+# save un-normalized results
+#save_un()
+
+# take in a column and returns normalized version
+def normalize_col(col):
+    # compute min
+    col_min = min(col)
+    col_max = max(col)
+
+    if col_max - col_min > 0:
+        col_n = []
+        for x in col:
+            x_n = (x - col_min) / (col_max - col_min)
+            col_n.append(x_n)
+        return col_n
+
+    elif (col_max - col_min == 0) and (col_min > 0):
+        col_n = []
+        for x in col:
+            x_n = (x - col_min) / (col_max)
+            col_n.append(x_n)
+        return col_n
+        
+    # everything is 0
+    else:
+        return col
+
+    
+# normalize the data for our NN!
+def normalize_master(data_path):
+    # read the csv: un-normalized df
+    un_df = pd.read_csv(data_path)
+    #un_df = un_df.head(10)
+    var_indices_ls = list(un_df.columns)[4:]
+    # go through each column and separately normalize
+    for col_name, values in un_df[var_indices_ls].iteritems():
+        #print(values)
+        temp_col = normalize_col(values)
+        un_df[col_name] = temp_col
+    # drop one of the duplicate indexing cols
+    un_df = un_df.iloc[:, 1:]
+    return un_df
+    
+per_path = os.path.join(VAR_OUT, 'folded_mm_per.csv')
+n_df = normalize_master(per_path)
+n_df_name = 'folded_mm_per_norm.csv'
+n_df.to_csv(os.path.join(VAR_OUT, n_df_name))

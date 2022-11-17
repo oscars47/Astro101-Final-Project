@@ -1,0 +1,36 @@
+2022-11-16 21:19:26,350 INFO    Thread-7  :127431 [wandb_setup.py:_flush():68] Configure stats pid to 127431
+2022-11-16 21:19:26,350 INFO    Thread-7  :127431 [wandb_setup.py:_flush():68] Loading settings from /home/oscar47/.config/wandb/settings
+2022-11-16 21:19:26,350 INFO    Thread-7  :127431 [wandb_setup.py:_flush():68] Loading settings from /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/settings
+2022-11-16 21:19:26,351 INFO    Thread-7  :127431 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True', 'entity': 'oscarscholin', 'project': 'Astro101_Project', 'root_dir': '/home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1', 'sweep_id': 'le37l0f4', 'run_id': 'w8fzl83e', 'sweep_param_path': '/home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/sweep-le37l0f4/config-w8fzl83e.yaml'}
+2022-11-16 21:19:26,351 INFO    Thread-7  :127431 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'nn_v0.0.1/nn.py', 'program': '/home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/nn.py'}
+2022-11-16 21:19:26,351 INFO    Thread-7  :127431 [wandb_init.py:_log_setup():476] Logging user logs to /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221116_211926-w8fzl83e/logs/debug.log
+2022-11-16 21:19:26,351 INFO    Thread-7  :127431 [wandb_init.py:_log_setup():477] Logging internal logs to /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221116_211926-w8fzl83e/logs/debug-internal.log
+2022-11-16 21:19:26,351 INFO    Thread-7  :127431 [wandb_init.py:init():516] calling init triggers
+2022-11-16 21:19:26,351 INFO    Thread-7  :127431 [wandb_init.py:init():519] wandb.init called with sweep_config: {'batch_size': 78, 'dropout': 0.32338544783612844, 'epochs': 15, 'learning_rate': 0.07650238450160682, 'size_1': 74, 'size_2': 156, 'size_3': 99, 'size_4': 216, 'size_5': 97}
+config: {}
+2022-11-16 21:19:26,351 INFO    Thread-7  :127431 [wandb_init.py:init():564] wandb.init() called when a run is still active
+2022-11-16 21:19:26,357 ERROR   Thread-7  :127431 [wandb_init.py:init():1105] error
+Traceback (most recent call last):
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 1078, in init
+    run = wi.init()
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 566, in init
+    tel.feature.init_return_run = True
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/telemetry.py", line 40, in __exit__
+    self._run._telemetry_callback(self._obj)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 608, in _telemetry_callback
+    self._telemetry_flush()
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 619, in _telemetry_flush
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 97, in _publish_telemetry
+    self._publish(rec)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/interface/interface_sock.py", line 51, in _publish
+    self._sock_client.send_record_publish(record)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 221, in send_record_publish
+    self.send_server_request(server_req)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 155, in send_server_request
+    self._send_message(msg)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 152, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+BrokenPipeError: [Errno 32] Broken pipe

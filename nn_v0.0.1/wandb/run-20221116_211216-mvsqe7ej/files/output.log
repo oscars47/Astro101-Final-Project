@@ -1,0 +1,50 @@
+[34m[1mwandb[39m[22m: [32m[41mERROR[39m[49m Error while calling W&B API: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand. (<Response [400]>)
+[34m[1mwandb[39m[22m: [32m[41mERROR[39m[49m 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 113, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 210, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/apis/normalize.py", line 26, in wrapper
+    return func(*args, **kwargs)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 2220, in upsert_sweep
+    raise e
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 2205, in upsert_sweep
+    response = self.gql(
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 129, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/util.py", line 974, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.UsageError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/nn.py", line 162, in <module>
+    sweep_id = wandb.sweep(sweep_config, project='Astro101_Project', entity="oscarscholin")
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/wandb_sweep.py", line 112, in sweep
+    sweep_id, warnings = api.upsert_sweep(sweep)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/apis/internal.py", line 102, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/apis/normalize.py", line 62, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/apis/normalize.py", line 26, in wrapper
+    return func(*args, **kwargs)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 2220, in upsert_sweep
+    raise e
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 2205, in upsert_sweep
+    response = self.gql(
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 129, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/oscar47/anaconda3/lib/python3.9/site-packages/wandb/util.py", line 974, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.CommError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
