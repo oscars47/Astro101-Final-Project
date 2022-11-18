@@ -5,7 +5,7 @@ import numpy as np
 import os
 import tensorflow as tf
 from keras import layers
-from keras.models import Model, Sequential, load_model
+from keras.models import Model, Sequential
 from keras.optimizers import Adam
 from keras.callbacks import ModelCheckpoint
 import wandb
@@ -200,10 +200,10 @@ parameters_dict = {
 sweep_config['parameters'] = parameters_dict 
 
 # login to wandb----------------
-wandb.init(project="Astro101_Project", entity="oscarscholin")
+wandb.init(project="Astro101_Project_v2", entity="oscarscholin")
 
 # initialize sweep agent
-sweep_id = wandb.sweep(sweep_config, project='Astro101_Project', entity="oscarscholin")
+sweep_id = wandb.sweep(sweep_config, project='Astro101_Project_v2', entity="oscarscholin")
 wandb.agent(sweep_id, train, count=100)
 
 #train_manual()

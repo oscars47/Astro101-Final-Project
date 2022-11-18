@@ -1,0 +1,854 @@
+2022-11-17 01:16:54,184 INFO    StreamThr :299454 [internal.py:wandb_internal():88] W&B internal server running at pid: 299454, started at: 2022-11-17 01:16:54.184105
+2022-11-17 01:16:54,185 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: status
+2022-11-17 01:16:54,186 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: status
+2022-11-17 01:16:54,196 DEBUG   SenderThread:299454 [sender.py:send():303] send: header
+2022-11-17 01:16:54,196 INFO    WriterThread:299454 [datastore.py:open_for_write():75] open: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/run-q8gfkafl.wandb
+2022-11-17 01:16:54,327 DEBUG   SenderThread:299454 [sender.py:send():303] send: run
+2022-11-17 01:16:54,577 INFO    SenderThread:299454 [dir_watcher.py:__init__():216] watching files in: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files
+2022-11-17 01:16:54,578 INFO    SenderThread:299454 [sender.py:_start_run_threads():928] run started: q8gfkafl with start time 1668676614.184185
+2022-11-17 01:16:54,578 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:16:54,578 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:16:54,578 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: check_version
+2022-11-17 01:16:54,579 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: check_version
+2022-11-17 01:16:54,649 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: run_start
+2022-11-17 01:16:54,657 ERROR   HandlerThread:299454 [gpu.py:is_available():351] Error initializing NVML: Driver Not Loaded
+2022-11-17 01:16:54,658 DEBUG   HandlerThread:299454 [system_info.py:__init__():31] System info init
+2022-11-17 01:16:54,658 DEBUG   HandlerThread:299454 [system_info.py:__init__():46] System info init done
+2022-11-17 01:16:54,658 INFO    HandlerThread:299454 [system_monitor.py:start():150] Starting system monitor
+2022-11-17 01:16:54,658 INFO    SystemMonitor:299454 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2022-11-17 01:16:54,658 INFO    HandlerThread:299454 [system_monitor.py:probe():168] Collecting system info
+2022-11-17 01:16:54,658 INFO    SystemMonitor:299454 [interfaces.py:start():168] Started cpu
+2022-11-17 01:16:54,659 INFO    SystemMonitor:299454 [interfaces.py:start():168] Started disk
+2022-11-17 01:16:54,659 INFO    SystemMonitor:299454 [interfaces.py:start():168] Started memory
+2022-11-17 01:16:54,659 INFO    SystemMonitor:299454 [interfaces.py:start():168] Started network
+2022-11-17 01:16:54,685 DEBUG   HandlerThread:299454 [system_info.py:probe():195] Probing system
+2022-11-17 01:16:54,688 DEBUG   HandlerThread:299454 [system_info.py:_probe_git():180] Probing git
+2022-11-17 01:16:54,695 DEBUG   HandlerThread:299454 [system_info.py:_probe_git():188] Probing git done
+2022-11-17 01:16:54,695 DEBUG   HandlerThread:299454 [system_info.py:probe():241] Probing system done
+2022-11-17 01:16:54,695 DEBUG   HandlerThread:299454 [system_monitor.py:probe():177] {'os': 'Linux-5.15.0-52-generic-x86_64-with-glibc2.35', 'python': '3.9.13', 'heartbeatAt': '2022-11-17T09:16:54.685813', 'startedAt': '2022-11-17T09:16:54.176023', 'docker': None, 'cuda': None, 'args': None, 'state': 'running', 'program': 'runnn-jvsc-7c05ac1d-82a8-49c7-b37d-edbdf94326838f6a8c7b-71f0-421e-93a2-6606ab6be076.ipynb', 'root': '/home/oscar47/Desktop/astro101/Astro101-Final-Project', 'git': {'remote': 'https://github.com/oscars47/Astro101-Final-Project', 'commit': '6dce87275ad0e092ad1d8b4c90d8de1f832f28b0'}, 'email': 'scholinoscar@gmail.com', 'host': 'oscar-MS-7D67', 'username': 'oscar47', 'executable': '/home/oscar47/anaconda3/bin/python', 'cpu_count': 16, 'cpu_count_logical': 32, 'cpu_freq': {'current': 0.6258124999999999, 'min': 400.0, 'max': 5881.0}, 'cpu_freq_per_core': [{'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 2.724, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 2.978, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 2.724, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}, {'current': 0.4, 'min': 400.0, 'max': 5881.0}], 'disk': {'total': 1832.2072448730469, 'used': 255.0577049255371}, 'memory': {'total': 58.52342224121094}}
+2022-11-17 01:16:54,695 INFO    HandlerThread:299454 [system_monitor.py:probe():178] Finished collecting system info
+2022-11-17 01:16:54,695 INFO    HandlerThread:299454 [system_monitor.py:probe():181] Publishing system info
+2022-11-17 01:16:54,695 DEBUG   HandlerThread:299454 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2022-11-17 01:16:54,695 DEBUG   HandlerThread:299454 [system_info.py:_save_pip():67] Saving pip packages done
+2022-11-17 01:16:54,695 DEBUG   HandlerThread:299454 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2022-11-17 01:16:55,579 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/requirements.txt
+2022-11-17 01:16:55,579 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:16:55,579 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/conda-environment.yaml
+2022-11-17 01:16:57,650 DEBUG   HandlerThread:299454 [system_info.py:_save_conda():86] Saving conda packages done
+2022-11-17 01:16:57,650 INFO    HandlerThread:299454 [system_monitor.py:probe():183] Finished publishing system info
+2022-11-17 01:16:57,732 DEBUG   SenderThread:299454 [sender.py:send():303] send: files
+2022-11-17 01:16:57,733 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-11-17 01:16:57,738 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-17 01:16:57,738 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: stop_status
+2022-11-17 01:16:57,749 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: get_summary
+2022-11-17 01:16:57,840 DEBUG   SenderThread:299454 [sender.py:send():303] send: telemetry
+2022-11-17 01:16:57,841 DEBUG   SenderThread:299454 [sender.py:send():303] send: telemetry
+2022-11-17 01:16:57,841 DEBUG   SenderThread:299454 [sender.py:send():303] send: telemetry
+2022-11-17 01:16:57,841 DEBUG   SenderThread:299454 [sender.py:send():303] send: files
+2022-11-17 01:16:57,841 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file model-best.h5 with policy live
+2022-11-17 01:16:57,841 DEBUG   SenderThread:299454 [sender.py:send():303] send: telemetry
+2022-11-17 01:16:58,060 DEBUG   SenderThread:299454 [sender.py:send():303] send: files
+2022-11-17 01:16:58,060 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file media/graph/graph_summary_3105337fe9668f6bfed0.graph.json with policy now
+2022-11-17 01:16:58,095 INFO    Thread-16 :299454 [upload_job.py:push():143] Uploaded file /tmp/tmpqbe60ni1wandb/5vxkq6o4-wandb-metadata.json
+2022-11-17 01:16:58,101 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:16:58,101 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:16:58,498 INFO    Thread-17 :299454 [upload_job.py:push():143] Uploaded file /tmp/tmpqbe60ni1wandb/1l7b6o5r-media/graph/graph_summary_3105337fe9668f6bfed0.graph.json
+2022-11-17 01:16:58,580 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:16:58,580 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/conda-environment.yaml
+2022-11-17 01:16:58,580 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-metadata.json
+2022-11-17 01:16:58,580 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:16:58,581 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/media/graph/graph_summary_3105337fe9668f6bfed0.graph.json
+2022-11-17 01:16:58,581 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/media/graph
+2022-11-17 01:16:58,581 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/media
+2022-11-17 01:16:59,091 INFO    Thread-18 :299454 [upload_job.py:push():143] Uploaded file /tmp/tmpqbe60ni1wandb/1gtca2eh-media/graph/graph_summary_3105337fe9668f6bfed0.graph.json
+2022-11-17 01:16:59,892 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:16:59,892 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:16:59,893 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:16:59,893 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:16:59,894 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:16:59,894 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:16:59,902 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:16:59,902 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:16:59,902 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:00,581 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:00,581 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:00,581 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best/saved_model.pb
+2022-11-17 01:17:00,581 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best/keras_metadata.pb
+2022-11-17 01:17:00,581 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best/variables/variables.data-00000-of-00001
+2022-11-17 01:17:00,581 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best/variables/variables.index
+2022-11-17 01:17:00,581 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best.h5
+2022-11-17 01:17:00,581 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best/assets
+2022-11-17 01:17:00,582 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best/variables
+2022-11-17 01:17:00,582 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best
+2022-11-17 01:17:00,684 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: log_artifact
+2022-11-17 01:17:00,684 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: log_artifact
+2022-11-17 01:17:01,082 INFO    Thread-19 :299454 [upload_job.py:push():143] Uploaded file /tmp/tmpqbe60ni1wandb/1cw4a2s5-model-best.h5
+2022-11-17 01:17:01,616 INFO    Thread-24 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/89/6cc70f5611bfb11dd19d70d5b3ce3c
+2022-11-17 01:17:01,616 INFO    Thread-21 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/c6/5c311c4db8bcba39bb3681b118e964
+2022-11-17 01:17:01,616 INFO    Thread-22 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/3e/05d1beac03535be01aee673053d87f
+2022-11-17 01:17:01,684 INFO    Thread-23 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/8a/55bbc8a7aa2b9798de39bec66a0ee6
+2022-11-17 01:17:02,397 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:02,397 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:02,414 INFO    SenderThread:299454 [sender.py:send_request_log_artifact():1222] logged artifact model-serene-sweep-53 - {'id': 'QXJ0aWZhY3Q6MjgxODQ3NzI2', 'digest': 'da9f963c4607a3153be5955491060f56', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjQ1NDcwNjgw', 'latestArtifact': None}, 'version': 'latest'}
+2022-11-17 01:17:02,414 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:02,414 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:02,415 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:02,415 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:02,423 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:02,424 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:02,424 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:02,582 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best.h5
+2022-11-17 01:17:02,582 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:02,582 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:02,971 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: log_artifact
+2022-11-17 01:17:02,971 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: log_artifact
+2022-11-17 01:17:03,633 INFO    Thread-26 :299454 [upload_job.py:push():98] Skipped uploading /home/oscar47/.cache/wandb/artifacts/obj/md5/c6/5c311c4db8bcba39bb3681b118e964
+2022-11-17 01:17:03,840 INFO    Thread-29 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/ae/ad498edc098ade215ac24cc07b38bf
+2022-11-17 01:17:03,863 INFO    Thread-27 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/63/a411b10a45f381e4d2c1b3af891424
+2022-11-17 01:17:03,895 INFO    Thread-28 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/d9/97f62796c6b5c807e2a23b2f8e636c
+2022-11-17 01:17:04,582 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:04,619 INFO    SenderThread:299454 [sender.py:send_request_log_artifact():1222] logged artifact model-serene-sweep-53 - {'id': 'QXJ0aWZhY3Q6MjgxODQ3NzQy', 'digest': 'fc9ff56a411f08d63f8dfb791d473c70', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjQ1NDcwNjgw', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MjgxODQ3NzI2', 'versionIndex': 0}}, 'version': 'latest'}
+2022-11-17 01:17:04,753 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:04,753 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:04,754 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:04,754 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:04,754 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:04,754 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:04,763 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:04,763 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:04,763 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:05,583 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best.h5
+2022-11-17 01:17:05,583 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:05,583 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best/saved_model.pb
+2022-11-17 01:17:05,583 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best/variables/variables.data-00000-of-00001
+2022-11-17 01:17:05,583 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best/keras_metadata.pb
+2022-11-17 01:17:05,583 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best/variables/variables.index
+2022-11-17 01:17:05,583 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best/assets
+2022-11-17 01:17:05,583 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best/variables
+2022-11-17 01:17:05,583 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_created():275] file/dir created: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best
+2022-11-17 01:17:05,613 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: log_artifact
+2022-11-17 01:17:05,613 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: log_artifact
+2022-11-17 01:17:06,138 INFO    Thread-31 :299454 [upload_job.py:push():98] Skipped uploading /home/oscar47/.cache/wandb/artifacts/obj/md5/c6/5c311c4db8bcba39bb3681b118e964
+2022-11-17 01:17:06,366 INFO    Thread-34 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/54/bac3dc8d21828542471d2d61bcebc5
+2022-11-17 01:17:06,372 INFO    Thread-32 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/0e/cc1492f556f32ea1a3619747bea6dc
+2022-11-17 01:17:06,424 INFO    Thread-33 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/03/bd0765ef12f674aef76146268b338a
+2022-11-17 01:17:06,583 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:07,284 INFO    SenderThread:299454 [sender.py:send_request_log_artifact():1222] logged artifact model-serene-sweep-53 - {'id': 'QXJ0aWZhY3Q6MjgxODQ3Nzcw', 'digest': '4b26b463efd6f8ff5fc1e01f1adfd35a', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjQ1NDcwNjgw', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MjgxODQ3NzQy', 'versionIndex': 1}}, 'version': 'latest'}
+2022-11-17 01:17:07,364 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:07,364 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:07,364 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:07,365 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:07,365 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:07,365 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:07,378 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:07,378 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:07,378 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:07,583 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best.h5
+2022-11-17 01:17:07,583 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:07,982 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: log_artifact
+2022-11-17 01:17:07,982 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: log_artifact
+2022-11-17 01:17:08,584 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:08,618 INFO    Thread-36 :299454 [upload_job.py:push():98] Skipped uploading /home/oscar47/.cache/wandb/artifacts/obj/md5/c6/5c311c4db8bcba39bb3681b118e964
+2022-11-17 01:17:08,838 INFO    Thread-39 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/2b/3077190bbbf3192e5820c35a2afd8d
+2022-11-17 01:17:08,853 INFO    Thread-37 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/d9/9e3d98cd9ec90738aebcc096b99bf5
+2022-11-17 01:17:08,918 INFO    Thread-38 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/46/69c0fe174fbd958e50e8124fffc198
+2022-11-17 01:17:09,606 INFO    SenderThread:299454 [sender.py:send_request_log_artifact():1222] logged artifact model-serene-sweep-53 - {'id': 'QXJ0aWZhY3Q6MjgxODQ3Nzky', 'digest': '6a9dbe02f00534a859a1a49312c9b62b', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjQ1NDcwNjgw', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MjgxODQ3Nzcw', 'versionIndex': 2}}, 'version': 'latest'}
+2022-11-17 01:17:09,737 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:09,737 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:09,737 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:09,737 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:09,738 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:09,738 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:09,746 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:09,746 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:09,747 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:10,215 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: log_artifact
+2022-11-17 01:17:10,215 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: log_artifact
+2022-11-17 01:17:10,584 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best.h5
+2022-11-17 01:17:10,584 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:10,584 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:10,878 INFO    Thread-41 :299454 [upload_job.py:push():98] Skipped uploading /home/oscar47/.cache/wandb/artifacts/obj/md5/c6/5c311c4db8bcba39bb3681b118e964
+2022-11-17 01:17:11,098 INFO    Thread-44 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/a0/e002b88e88c183534a5113e6e51236
+2022-11-17 01:17:11,121 INFO    Thread-42 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/61/7e925f8115190aa705816d2b2c2b7b
+2022-11-17 01:17:11,142 INFO    Thread-43 :299454 [upload_job.py:push():101] Uploaded file /home/oscar47/.cache/wandb/artifacts/obj/md5/26/ef5722875b14433d81fa4f8f10f7a3
+2022-11-17 01:17:11,854 INFO    SenderThread:299454 [sender.py:send_request_log_artifact():1222] logged artifact model-serene-sweep-53 - {'id': 'QXJ0aWZhY3Q6MjgxODQ3ODA5', 'digest': '019fc560e68c044097cd79f973707df9', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjQ1NDcwNjgw', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MjgxODQ3Nzky', 'versionIndex': 3}}, 'version': 'latest'}
+2022-11-17 01:17:11,957 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:11,957 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:11,958 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:11,958 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:11,959 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:12,585 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:12,585 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:12,842 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-17 01:17:12,843 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: stop_status
+2022-11-17 01:17:13,747 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:13,747 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:13,747 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:13,748 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:13,748 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:14,585 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:14,585 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:15,505 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:15,505 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:15,514 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:15,514 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:15,515 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:15,586 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:16,586 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:17,262 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:17,262 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:17,263 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:17,263 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:17,263 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:17,586 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:18,587 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:19,029 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:19,029 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:19,029 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:19,029 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:19,030 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:19,587 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:20,587 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:20,754 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:20,754 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:20,755 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:20,755 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:20,755 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:21,587 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:22,500 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:22,500 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:22,500 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:22,500 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:22,502 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:22,588 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:22,588 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:24,275 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:24,275 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:24,276 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:24,588 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:26,003 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:26,003 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:26,589 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:27,762 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:27,762 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:27,965 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-17 01:17:29,459 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:29,459 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:31,209 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:31,209 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:32,958 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:32,958 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:34,726 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:34,726 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:35,498 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:35,500 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:35,500 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:35,500 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:35,500 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:35,501 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:35,501 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:35,501 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:35,501 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: stop_status
+2022-11-17 01:17:35,579 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:35,579 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:35,579 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:35,580 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:35,580 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:35,580 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:35,581 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:35,581 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:35,581 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:35,581 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:35,581 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:35,581 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:35,592 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:35,592 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/config.yaml
+2022-11-17 01:17:36,498 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:36,499 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:36,499 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:36,499 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:36,499 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:36,592 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:38,256 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:38,256 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:38,257 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:38,257 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:38,257 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:38,592 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:38,593 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:39,989 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:39,989 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:39,990 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:39,990 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:39,990 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:40,593 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:40,593 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:41,759 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:41,759 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:41,759 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:41,760 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:41,760 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:42,594 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:42,594 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:43,519 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:43,519 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:43,520 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:43,520 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:43,520 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:43,594 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:44,594 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:45,295 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:45,295 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:45,296 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:45,296 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:45,296 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:45,594 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:46,596 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:47,063 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:47,063 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:47,063 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:47,063 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:47,064 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:47,596 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:47,965 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-17 01:17:47,965 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: stop_status
+2022-11-17 01:17:48,597 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:48,819 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:48,820 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:48,820 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:48,820 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:48,820 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:49,597 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:50,595 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:50,595 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:50,596 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:50,596 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:50,596 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:50,597 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:50,597 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:52,365 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:52,366 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:52,366 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:52,366 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:52,367 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:52,598 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:52,598 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:54,115 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:54,115 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:54,116 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:54,116 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:54,116 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:54,599 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:54,599 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:54,660 DEBUG   SystemMonitor:299454 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2022-11-17 01:17:54,660 DEBUG   SenderThread:299454 [sender.py:send():303] send: stats
+2022-11-17 01:17:55,834 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:55,834 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:55,835 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:55,835 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:55,835 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:56,599 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:56,599 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:57,525 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:57,525 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:57,526 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:57,526 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:57,526 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:57,599 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:17:58,600 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:17:59,255 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:59,255 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:17:59,255 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:17:59,255 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:17:59,256 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:17:59,600 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:00,600 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:01,003 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:01,003 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:01,004 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:01,004 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:01,004 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:01,601 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:02,601 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:02,766 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:02,766 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:02,767 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:02,767 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:02,767 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:03,049 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-17 01:18:03,049 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: stop_status
+2022-11-17 01:18:03,601 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:04,534 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:04,534 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:04,535 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:04,535 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:04,536 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:04,601 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:04,602 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:06,279 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:06,279 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:06,279 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:06,279 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:06,280 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:06,602 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:06,602 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:08,029 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:08,029 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:08,030 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:08,030 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:08,030 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:08,603 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:08,603 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:09,787 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:09,787 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:09,788 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:09,788 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:09,788 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:10,603 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:10,603 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:11,525 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:11,525 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:11,525 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:11,525 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:11,526 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:11,604 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:12,604 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:13,285 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:13,329 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:13,329 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:13,330 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:13,330 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:13,604 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:14,604 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:15,038 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:15,039 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:15,039 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:15,039 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:15,040 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:15,605 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:16,605 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:16,802 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:16,802 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:16,802 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:16,803 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:16,803 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:17,605 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:18,162 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-17 01:18:18,162 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: stop_status
+2022-11-17 01:18:18,561 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:18,562 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:18,562 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:18,562 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:18,563 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:18,606 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:18,606 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:20,309 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:20,309 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:20,310 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:20,310 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:20,311 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:20,606 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:20,606 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:22,094 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:22,094 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:22,095 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:22,095 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:22,095 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:22,607 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:22,607 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:23,823 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:23,823 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:23,824 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:23,824 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:23,832 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:24,607 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:24,607 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:24,661 DEBUG   SenderThread:299454 [sender.py:send():303] send: stats
+2022-11-17 01:18:25,569 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:25,570 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:25,570 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:25,570 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:25,571 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:25,608 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:26,608 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:27,322 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:27,322 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:27,322 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:27,322 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:27,323 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:27,608 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:28,608 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:29,064 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:29,064 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:29,064 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:29,065 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:29,065 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:29,609 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:30,609 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:30,816 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:30,816 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:30,816 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:30,817 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:30,817 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:31,609 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:32,516 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:32,517 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:32,517 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:32,517 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:32,517 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:32,610 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:32,610 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:33,264 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-17 01:18:33,264 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: stop_status
+2022-11-17 01:18:34,242 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:34,242 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:34,242 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:34,242 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:34,243 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:34,610 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:34,610 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:35,993 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:35,994 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:35,994 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:35,994 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:35,994 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:36,611 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:36,611 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:37,747 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:37,747 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:37,748 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:37,748 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:37,748 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:38,611 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:38,612 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:39,505 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:39,506 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:39,506 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:39,506 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:39,506 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:39,612 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:40,612 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:41,259 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:41,259 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:41,259 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:41,260 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:41,260 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:41,612 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:42,613 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:43,026 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:43,026 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:43,026 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:43,026 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:43,027 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:43,613 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:44,613 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:44,773 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:44,773 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:44,773 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:44,773 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:44,774 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:45,614 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:46,525 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:46,525 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:46,525 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:46,525 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:46,526 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:46,614 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:46,614 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:48,266 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:48,266 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:48,266 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:48,267 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:48,267 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:48,454 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-17 01:18:48,454 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: stop_status
+2022-11-17 01:18:48,614 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:48,615 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:49,994 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:49,994 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:49,995 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:49,995 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:49,995 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:50,615 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:50,615 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:51,727 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:51,727 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:51,727 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:51,727 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:51,728 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:52,616 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:52,616 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:53,474 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:53,474 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:53,475 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:53,475 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:53,475 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:53,616 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:54,616 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:54,661 DEBUG   SenderThread:299454 [sender.py:send():303] send: stats
+2022-11-17 01:18:55,234 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:55,234 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:55,234 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:55,234 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:55,235 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:55,617 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:56,617 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:56,997 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:56,997 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:56,997 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:56,998 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:56,998 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:57,617 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:18:58,618 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:18:58,757 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:58,801 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:18:58,801 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:18:58,801 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:18:58,802 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:18:59,618 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:00,521 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:00,521 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:00,522 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:00,522 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:00,522 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:00,618 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:00,618 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:02,300 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:02,300 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:02,301 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:02,301 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:02,301 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:02,619 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:02,619 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:03,600 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-17 01:19:03,601 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: stop_status
+2022-11-17 01:19:04,042 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:04,042 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:04,042 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:04,042 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:04,043 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:04,619 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:04,620 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:05,805 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:05,806 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:05,806 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:05,806 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:05,806 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:06,620 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:06,620 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:07,554 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:07,554 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:07,554 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:07,554 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:07,555 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:07,620 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:08,621 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:09,270 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:09,270 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:09,271 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:09,271 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:09,271 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:09,621 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:10,621 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:11,041 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:11,041 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:11,041 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:11,041 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:11,042 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:11,622 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:12,622 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:12,780 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:12,780 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:12,780 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:12,781 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:12,781 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:13,622 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:14,516 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:14,516 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:14,517 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:14,517 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:14,517 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:14,623 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:14,623 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:16,219 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:16,219 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:16,219 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:16,220 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:16,220 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:16,623 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:16,623 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:17,931 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:17,932 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:17,932 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:17,932 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:17,933 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:18,624 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:18,624 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:18,701 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: stop_status
+2022-11-17 01:19:18,701 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: stop_status
+2022-11-17 01:19:19,669 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:19,670 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:19,670 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:19,670 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:19,671 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:20,625 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:20,625 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:21,416 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:21,416 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:21,416 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:21,417 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:21,417 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:21,625 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:22,625 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:23,160 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:23,161 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:23,161 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:23,161 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:23,162 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:23,626 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:24,626 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:24,662 DEBUG   SenderThread:299454 [sender.py:send():303] send: stats
+2022-11-17 01:19:24,925 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:24,926 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:24,926 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:24,926 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:24,926 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:25,626 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:26,626 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:26,680 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:26,680 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:26,681 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:26,681 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:26,681 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:27,627 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:28,404 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:28,404 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:28,404 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:28,405 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:28,405 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:28,627 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:28,627 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:30,147 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:30,148 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: partial_history
+2022-11-17 01:19:30,148 DEBUG   SenderThread:299454 [sender.py:send():303] send: history
+2022-11-17 01:19:30,148 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:30,149 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:30,150 DEBUG   SenderThread:299454 [sender.py:send():303] send: telemetry
+2022-11-17 01:19:30,150 DEBUG   SenderThread:299454 [sender.py:send():303] send: exit
+2022-11-17 01:19:30,150 INFO    SenderThread:299454 [sender.py:send_exit():442] handling exit code: 0
+2022-11-17 01:19:30,150 INFO    SenderThread:299454 [sender.py:send_exit():444] handling runtime: 155
+2022-11-17 01:19:30,157 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:30,157 INFO    SenderThread:299454 [sender.py:send_exit():450] send defer
+2022-11-17 01:19:30,157 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: defer
+2022-11-17 01:19:30,157 INFO    HandlerThread:299454 [handler.py:handle_request_defer():162] handle defer: 0
+2022-11-17 01:19:30,158 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: defer
+2022-11-17 01:19:30,158 INFO    SenderThread:299454 [sender.py:send_request_defer():459] handle sender defer: 0
+2022-11-17 01:19:30,158 INFO    SenderThread:299454 [sender.py:transition_state():463] send defer: 1
+2022-11-17 01:19:30,158 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: defer
+2022-11-17 01:19:30,158 INFO    HandlerThread:299454 [handler.py:handle_request_defer():162] handle defer: 1
+2022-11-17 01:19:30,158 INFO    HandlerThread:299454 [system_monitor.py:finish():160] Stopping system monitor
+2022-11-17 01:19:30,158 DEBUG   SystemMonitor:299454 [system_monitor.py:_start():137] Finished system metrics aggregation loop
+2022-11-17 01:19:30,158 DEBUG   SystemMonitor:299454 [system_monitor.py:_start():141] Publishing last batch of metrics
+2022-11-17 01:19:30,159 INFO    HandlerThread:299454 [interfaces.py:finish():173] Joined cpu
+2022-11-17 01:19:30,159 INFO    HandlerThread:299454 [interfaces.py:finish():173] Joined disk
+2022-11-17 01:19:30,159 INFO    HandlerThread:299454 [interfaces.py:finish():173] Joined memory
+2022-11-17 01:19:30,159 INFO    HandlerThread:299454 [interfaces.py:finish():173] Joined network
+2022-11-17 01:19:30,159 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: defer
+2022-11-17 01:19:30,159 INFO    SenderThread:299454 [sender.py:send_request_defer():459] handle sender defer: 1
+2022-11-17 01:19:30,159 INFO    SenderThread:299454 [sender.py:transition_state():463] send defer: 2
+2022-11-17 01:19:30,159 DEBUG   SenderThread:299454 [sender.py:send():303] send: stats
+2022-11-17 01:19:30,159 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: defer
+2022-11-17 01:19:30,159 INFO    HandlerThread:299454 [handler.py:handle_request_defer():162] handle defer: 2
+2022-11-17 01:19:30,159 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: defer
+2022-11-17 01:19:30,159 INFO    SenderThread:299454 [sender.py:send_request_defer():459] handle sender defer: 2
+2022-11-17 01:19:30,159 INFO    SenderThread:299454 [sender.py:transition_state():463] send defer: 3
+2022-11-17 01:19:30,159 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: defer
+2022-11-17 01:19:30,160 INFO    HandlerThread:299454 [handler.py:handle_request_defer():162] handle defer: 3
+2022-11-17 01:19:30,160 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: defer
+2022-11-17 01:19:30,160 INFO    SenderThread:299454 [sender.py:send_request_defer():459] handle sender defer: 3
+2022-11-17 01:19:30,160 INFO    SenderThread:299454 [sender.py:transition_state():463] send defer: 4
+2022-11-17 01:19:30,160 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: defer
+2022-11-17 01:19:30,160 INFO    HandlerThread:299454 [handler.py:handle_request_defer():162] handle defer: 4
+2022-11-17 01:19:30,160 DEBUG   SenderThread:299454 [sender.py:send():303] send: summary
+2022-11-17 01:19:30,160 INFO    SenderThread:299454 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-11-17 01:19:30,160 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: defer
+2022-11-17 01:19:30,160 INFO    SenderThread:299454 [sender.py:send_request_defer():459] handle sender defer: 4
+2022-11-17 01:19:30,160 INFO    SenderThread:299454 [sender.py:transition_state():463] send defer: 5
+2022-11-17 01:19:30,160 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: defer
+2022-11-17 01:19:30,160 INFO    HandlerThread:299454 [handler.py:handle_request_defer():162] handle defer: 5
+2022-11-17 01:19:30,160 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: defer
+2022-11-17 01:19:30,160 INFO    SenderThread:299454 [sender.py:send_request_defer():459] handle sender defer: 5
+2022-11-17 01:19:30,287 INFO    SenderThread:299454 [sender.py:transition_state():463] send defer: 6
+2022-11-17 01:19:30,288 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: defer
+2022-11-17 01:19:30,288 INFO    HandlerThread:299454 [handler.py:handle_request_defer():162] handle defer: 6
+2022-11-17 01:19:30,288 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: defer
+2022-11-17 01:19:30,288 INFO    SenderThread:299454 [sender.py:send_request_defer():459] handle sender defer: 6
+2022-11-17 01:19:30,628 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:30,628 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:30,628 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/config.yaml
+2022-11-17 01:19:31,152 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: poll_exit
+2022-11-17 01:19:32,529 INFO    SenderThread:299454 [sender.py:transition_state():463] send defer: 7
+2022-11-17 01:19:32,529 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: poll_exit
+2022-11-17 01:19:32,530 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: defer
+2022-11-17 01:19:32,530 INFO    HandlerThread:299454 [handler.py:handle_request_defer():162] handle defer: 7
+2022-11-17 01:19:32,530 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: defer
+2022-11-17 01:19:32,530 INFO    SenderThread:299454 [sender.py:send_request_defer():459] handle sender defer: 7
+2022-11-17 01:19:32,530 INFO    SenderThread:299454 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-11-17 01:19:32,628 INFO    Thread-13 :299454 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:32,629 INFO    SenderThread:299454 [dir_watcher.py:finish():392] scan: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files
+2022-11-17 01:19:32,629 INFO    SenderThread:299454 [dir_watcher.py:finish():406] scan save: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log output.log
+2022-11-17 01:19:32,629 INFO    SenderThread:299454 [dir_watcher.py:finish():406] scan save: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/conda-environment.yaml conda-environment.yaml
+2022-11-17 01:19:32,629 INFO    SenderThread:299454 [dir_watcher.py:finish():406] scan save: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/model-best.h5 model-best.h5
+2022-11-17 01:19:32,629 INFO    SenderThread:299454 [dir_watcher.py:finish():406] scan save: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/config.yaml config.yaml
+2022-11-17 01:19:32,631 INFO    SenderThread:299454 [dir_watcher.py:finish():406] scan save: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-metadata.json wandb-metadata.json
+2022-11-17 01:19:32,631 INFO    SenderThread:299454 [dir_watcher.py:finish():406] scan save: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json wandb-summary.json
+2022-11-17 01:19:32,632 INFO    SenderThread:299454 [dir_watcher.py:finish():406] scan save: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/requirements.txt requirements.txt
+2022-11-17 01:19:32,634 INFO    SenderThread:299454 [dir_watcher.py:finish():406] scan save: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/media/graph/graph_summary_3105337fe9668f6bfed0.graph.json media/graph/graph_summary_3105337fe9668f6bfed0.graph.json
+2022-11-17 01:19:32,634 INFO    SenderThread:299454 [sender.py:transition_state():463] send defer: 8
+2022-11-17 01:19:32,634 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: defer
+2022-11-17 01:19:32,634 INFO    HandlerThread:299454 [handler.py:handle_request_defer():162] handle defer: 8
+2022-11-17 01:19:32,634 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: defer
+2022-11-17 01:19:32,634 INFO    SenderThread:299454 [sender.py:send_request_defer():459] handle sender defer: 8
+2022-11-17 01:19:32,634 INFO    SenderThread:299454 [file_pusher.py:finish():168] shutting down file pusher
+2022-11-17 01:19:33,008 INFO    Thread-50 :299454 [upload_job.py:push():143] Uploaded file /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/requirements.txt
+2022-11-17 01:19:33,009 INFO    Thread-49 :299454 [upload_job.py:push():143] Uploaded file /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/wandb-summary.json
+2022-11-17 01:19:33,010 INFO    Thread-48 :299454 [upload_job.py:push():143] Uploaded file /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/config.yaml
+2022-11-17 01:19:33,018 INFO    Thread-46 :299454 [upload_job.py:push():143] Uploaded file /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/conda-environment.yaml
+2022-11-17 01:19:33,020 INFO    Thread-45 :299454 [upload_job.py:push():143] Uploaded file /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/files/output.log
+2022-11-17 01:19:33,146 INFO    Thread-47 :299454 [upload_job.py:push():143] Uploaded file /tmp/tmpqbe60ni1wandb/3mmgsypo-model-best.h5
+2022-11-17 01:19:33,347 INFO    Thread-12 :299454 [sender.py:transition_state():463] send defer: 9
+2022-11-17 01:19:33,347 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: defer
+2022-11-17 01:19:33,347 INFO    HandlerThread:299454 [handler.py:handle_request_defer():162] handle defer: 9
+2022-11-17 01:19:33,347 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: defer
+2022-11-17 01:19:33,348 INFO    SenderThread:299454 [sender.py:send_request_defer():459] handle sender defer: 9
+2022-11-17 01:19:33,348 INFO    SenderThread:299454 [file_pusher.py:join():173] waiting for file pusher
+2022-11-17 01:19:33,348 INFO    SenderThread:299454 [sender.py:transition_state():463] send defer: 10
+2022-11-17 01:19:33,348 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: defer
+2022-11-17 01:19:33,348 INFO    HandlerThread:299454 [handler.py:handle_request_defer():162] handle defer: 10
+2022-11-17 01:19:33,348 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: defer
+2022-11-17 01:19:33,348 INFO    SenderThread:299454 [sender.py:send_request_defer():459] handle sender defer: 10
+2022-11-17 01:19:33,642 INFO    SenderThread:299454 [sender.py:transition_state():463] send defer: 11
+2022-11-17 01:19:33,643 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: defer
+2022-11-17 01:19:33,643 INFO    HandlerThread:299454 [handler.py:handle_request_defer():162] handle defer: 11
+2022-11-17 01:19:33,643 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: defer
+2022-11-17 01:19:33,643 INFO    SenderThread:299454 [sender.py:send_request_defer():459] handle sender defer: 11
+2022-11-17 01:19:33,643 INFO    SenderThread:299454 [sender.py:transition_state():463] send defer: 12
+2022-11-17 01:19:33,644 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: defer
+2022-11-17 01:19:33,644 INFO    HandlerThread:299454 [handler.py:handle_request_defer():162] handle defer: 12
+2022-11-17 01:19:33,644 DEBUG   SenderThread:299454 [sender.py:send():303] send: final
+2022-11-17 01:19:33,644 DEBUG   SenderThread:299454 [sender.py:send():303] send: footer
+2022-11-17 01:19:33,644 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: defer
+2022-11-17 01:19:33,644 INFO    SenderThread:299454 [sender.py:send_request_defer():459] handle sender defer: 12
+2022-11-17 01:19:33,645 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: poll_exit
+2022-11-17 01:19:33,645 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: server_info
+2022-11-17 01:19:33,645 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: poll_exit
+2022-11-17 01:19:33,645 DEBUG   SenderThread:299454 [sender.py:send_request():317] send_request: server_info
+2022-11-17 01:19:33,647 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: get_summary
+2022-11-17 01:19:33,647 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: sampled_history
+2022-11-17 01:19:33,737 DEBUG   HandlerThread:299454 [handler.py:handle_request():139] handle_request: shutdown
+2022-11-17 01:19:33,737 INFO    HandlerThread:299454 [handler.py:finish():814] shutting down handler
+2022-11-17 01:19:34,644 INFO    WriterThread:299454 [datastore.py:close():279] close: /home/oscar47/Desktop/astro101/Astro101-Final-Project/nn_v0.0.1/wandb/run-20221117_011654-q8gfkafl/run-q8gfkafl.wandb
+2022-11-17 01:19:34,736 INFO    SenderThread:299454 [sender.py:finish():1331] shutting down sender
+2022-11-17 01:19:34,737 INFO    SenderThread:299454 [file_pusher.py:finish():168] shutting down file pusher
+2022-11-17 01:19:34,737 INFO    SenderThread:299454 [file_pusher.py:join():173] waiting for file pusher
+2022-11-17 01:19:36,609 INFO    MainThread:299454 [internal.py:handle_exit():78] Internal process exited
