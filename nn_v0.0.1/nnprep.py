@@ -27,7 +27,7 @@ def get_heatmap():
 # these hold the conversion from the list of var classes to indices in the list and vice versa
 def get_target_dicts():
     global class_to_int, int_to_class
-    print(unique_targets)
+    #print(unique_targets)
     class_to_int = dict((target, i) for i, target in enumerate(unique_targets))
     int_to_class = dict((i, target) for i, target in enumerate(unique_targets))
 

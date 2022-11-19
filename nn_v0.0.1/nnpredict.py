@@ -2,12 +2,15 @@ import os
 import numpy as np
 import pandas as pd
 from keras.models import load_model
+from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 from nnprep import *
 
 # load model
 MODEL_PATH = '/home/oscar47/Desktop/astro101/models'
-model = load_model(os.path.join(MODEL_PATH, 'lilac19.h5'))
+model = load_model(os.path.join(MODEL_PATH, 'wise32.h5'))
 
 # load input_x and output targets
 DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output'
@@ -28,34 +31,30 @@ def convert_to_class(vec):
     index = np.argmax(vec)
     confidence = np.max(vec)
     class_type = int_to_class[index]
-    return class_type, confidence
+    return index, class_type, confidence
 
 # get class names
 object_names = asassn['id'].to_list()
-object_target_real = asassn['target'].to_list()
-
-print(unique_targets)
-test = output_targets[2]
-print(test)
-print(convert_to_class(test))
-print(object_target_real[2])
-print(make_1_hots([object_target_real[2]]))
 
 # takes in input data which is array of arrays
-def predict_vars(model, names, input_x, output_targets, targets2, file_name):
+def predict_vars(model, names, input_x, output_targets, file_name):
     results = model.predict(input_x) # predict!!
     # initialize lists to hold results
     output_classes = []
+    output_classes_indices = []
     output_confidences= []
     for result in results:
-        class_type, confidence = convert_to_class(result)
+        index, class_type, confidence = convert_to_class(result)
+        output_classes_indices.append(index)
         output_classes.append(class_type)
         output_confidences.append(confidence)
 
     #convert targets back to classes
     output_target_names = []
+    output_target_indices = []
     for target in output_targets:
-        class_type, _ = convert_to_class(target)
+        index, class_type, _ = convert_to_class(target)
+        output_target_indices.append(index)
         output_target_names.append(class_type)
 
     # build and save dataset
@@ -64,9 +63,26 @@ def predict_vars(model, names, input_x, output_targets, targets2, file_name):
     asassn_pred['prediction'] = output_classes
     asassn_pred['confidence'] = output_confidences
     asassn_pred['actual'] = output_target_names
-    asassn_pred['actual2'] = targets2
     
     asassn_pred.to_csv(os.path.join(DATA_DIR, file_name))
-    #return asassn_pred
-file_name = 'lilac19_results.csv'
-lilac19 = predict_vars(model, object_names, input_x, output_targets, object_target_real, file_name)
+    return output_classes_indices, output_target_indices
+
+def get_confusion_matrix(output_targets, output_preds):
+    # create a confusion matrix to illustrate results
+    cm = confusion_matrix(output_targets, output_preds)
+    cm_df = pd.DataFrame(cm, index = unique_targets, columns = unique_targets)
+    cm_norm_df = cm_df / cm_df.sum() # divide each column by the sum for that column to determine relative precentage
+    # plot
+    plt.figure(figsize=(10,7))
+    sns.heatmap(cm_norm_df, annot=True)
+    plt.title('Confusion matrix', fontsize=20)
+    plt.ylabel('Actual values', fontsize=16)
+    plt.xlabel('Predicted values', fontsize=16)
+    #plt.savefig(os.path.join(DATA_DIR, 'confusion.jpeg'))
+    plt.show()
+
+file_name = 'wise32_results.csv'
+output_classes_indices, output_target_indices = predict_vars(model, object_names, input_x, output_targets, file_name)
+get_confusion_matrix(output_classes_indices, output_target_indices)
+
+
