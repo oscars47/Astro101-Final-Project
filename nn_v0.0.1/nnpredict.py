@@ -71,14 +71,21 @@ def get_confusion_matrix(output_targets, output_preds):
     # create a confusion matrix to illustrate results
     cm = confusion_matrix(output_targets, output_preds)
     cm_df = pd.DataFrame(cm, index = unique_targets, columns = unique_targets)
+    # compute accuracy
+    accuracy = 0
+    for i in range(len(cm)):
+        for j in range(len(cm[i])):
+            if i ==j:
+                accuracy += cm[i][j]
+    accuracy /= len(output_preds) # divide total correct by total obs
     cm_norm_df = cm_df / cm_df.sum() # divide each column by the sum for that column to determine relative precentage
     # plot
     plt.figure(figsize=(10,7))
     sns.heatmap(cm_norm_df, annot=True)
-    plt.title('Confusion matrix', fontsize=20)
-    plt.ylabel('Actual values', fontsize=16)
-    plt.xlabel('Predicted values', fontsize=16)
-    #plt.savefig(os.path.join(DATA_DIR, 'confusion.jpeg'))
+    plt.title('Confusion matrix v0.0.1, accuracy = %f'%np.round(accuracy, 4), fontsize=20)
+    plt.ylabel('Actual variable class', fontsize=16)
+    plt.xlabel('Predicted variable class', fontsize=16)
+    plt.savefig(os.path.join(DATA_DIR, 'confusion_acc_v0.0.1.jpeg'))
     plt.show()
 
 file_name = 'wise32_results.csv'

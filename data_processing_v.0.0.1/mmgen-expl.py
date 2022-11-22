@@ -5,6 +5,7 @@ import os
 from tqdm import tqdm
 import pandas as pd
 import numpy as np
+from prettytable import PrettyTable
 # import files we've created
 from lcgen import get_lc
 from vargen import Variable
@@ -63,6 +64,34 @@ for lc in lc_files:
 # get unique classes of variable objects---------------
 vars = pd.read_csv(os.path.join(DATA_DIR, 'asassn_variables_x.csv'))
 var_unique = list(vars['ML_classification'].unique())
+
+# export ra and dec to make ascii table given pd dataframe
+def get_ascii(df, save_path):
+    #df = df.head(10)
+
+    # get list of ra, dec and add to x
+    ra_ls = df['RAJ2000'].to_list()
+    dec_ls = df['DEJ2000'].to_list()
+   
+    
+
+    x = PrettyTable()
+
+    column_names = ["ra", "dec"]
+    ra_ls.insert(0, 'float')
+    dec_ls.insert(0, 'float')
+    print(x)
+    x.add_column(column_names[0], ra_ls)
+    x.add_column(column_names[1], dec_ls)  
+
+    print(x)
+
+    data = x.get_string()
+
+    with open(os.path.join(save_path, 'test.txt'), 'w') as f:
+        f.write(data)
+
+get_ascii(vars, DATA_DIR)
 
 # fold lcs!-----------------------
 # to be run once
@@ -250,7 +279,7 @@ def normalize_master(data_path):
     un_df = un_df.iloc[:, 1:]
     return un_df
     
-per_path = os.path.join(VAR_OUT, 'folded_mm_per.csv')
-n_df = normalize_master(per_path)
-n_df_name = 'folded_mm_per_norm.csv'
-n_df.to_csv(os.path.join(VAR_OUT, n_df_name))
+# per_path = os.path.join(VAR_OUT, 'folded_mm_per.csv')
+# n_df = normalize_master(per_path)
+# n_df_name = 'folded_mm_per_norm.csv'
+# n_df.to_csv(os.path.join(VAR_OUT, n_df_name))
