@@ -80,7 +80,7 @@ def get_ascii(df, save_path):
     column_names = ["ra", "dec"]
     ra_ls.insert(0, 'float')
     dec_ls.insert(0, 'float')
-    print(x)
+    
     x.add_column(column_names[0], ra_ls)
     x.add_column(column_names[1], dec_ls)  
 
