@@ -91,7 +91,10 @@ def get_ascii(df, save_path):
     with open(os.path.join(save_path, 'test.txt'), 'w') as f:
         f.write(data)
 
-get_ascii(vars, DATA_DIR)
+#get_ascii(vars, DATA_DIR)
+        
+# read in ascii table
+
 
 # fold lcs!-----------------------
 # to be run once

@@ -16,8 +16,8 @@ model = load_model(os.path.join(MODEL_PATH, 'wise32.h5'))
 DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output'
 
 
-input_x = np.load(os.path.join(DATA_DIR, 'mm_n_extra.npy'))
-output_targets = np.load(os.path.join(DATA_DIR, 'targets_extra.npy'))
+input_x = np.load(os.path.join(DATA_DIR, 'v0.0.1/mm_n_extra.npy'))
+output_targets = np.load(os.path.join(DATA_DIR, 'v0.0.1/targets_extra.npy'))
 
 
 #load asasn-sn variables in last 50%
@@ -81,11 +81,11 @@ def get_confusion_matrix(output_targets, output_preds):
     cm_norm_df = cm_df / cm_df.sum() # divide each column by the sum for that column to determine relative precentage
     # plot
     plt.figure(figsize=(10,7))
-    sns.heatmap(cm_norm_df, annot=True)
+    sns.heatmap(cm_norm_df, cmap = 'viridis', annot=True)
     plt.title('Confusion matrix v0.0.1, accuracy = %f'%np.round(accuracy, 4), fontsize=20)
     plt.ylabel('Actual variable class', fontsize=16)
     plt.xlabel('Predicted variable class', fontsize=16)
-    plt.savefig(os.path.join(DATA_DIR, 'confusion_acc_v0.0.1.jpeg'))
+    #plt.savefig(os.path.join(DATA_DIR, 'confusion_acc_v0.0.1.jpeg'))
     plt.show()
 
 file_name = 'wise32_results.csv'
