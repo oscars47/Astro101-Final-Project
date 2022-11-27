@@ -1145,7 +1145,7 @@ class Variable2:
     # function to return indices as dictionary
     def return_dict(self):
         return {
-            'name': [self.name], 'period': [self.period], 'power': [self.power], 'log_10 fap': [self.log_fap],
+            'name': [self.name], 'target': [self.target], 'period': [self.period], 'power': [self.power], 'log_10 fap': [self.log_fap],
             'T_t': [self.T_t], 'T_p': [self.T_p], 'T_2p': [self.T_2p], 
             'delta_t': [self.delta_t], 'delta_p': [self.delta_p],
             'j-k': [self.j_k], 'h-k': [self.h_k], 'skew': [self.skew],
