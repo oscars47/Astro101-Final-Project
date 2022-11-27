@@ -119,7 +119,7 @@ table_df = pd.read_csv(os.path.join(DATA_DIR, 'table_irsa_catalog_search_results
 # initiate var dfs for Variable2 object
 def init_var2_dfs():
     mm_df = pd.DataFrame({
-        'period': [], 'power': [], 'log_10 fap': [],
+        'name': [], 'period': [], 'power': [], 'log_10 fap': [],
         'T_t': [], 'T_p': [], 'T_2p': [], 
         'delta_t': [], 'delta_p': [],
         'j-k': [], 'h-k': [], 'skew': [],
@@ -203,7 +203,7 @@ def normalize_master_file(data_path):
     return un_df
 
 def normalize_master_df(un_df):
-    var_indices_ls = list(un_df.columns)[1:]
+    var_indices_ls = list(un_df.columns)[2:]
     # go through each column and separately normalize
     for col_name, values in un_df[var_indices_ls].iteritems():
         #print(values)
@@ -219,6 +219,9 @@ def run_all():
         file = lc_files[i]
         mm_df = get_var_data_file(mm_df, file, LC_DIR)
 
+    # save unnormalized
+    mm_df.to_csv(os.path.join(VAR_OUT, 'v0.1.0/mm_2_un.csv'))
+
     # normalize
     mm_df = normalize_master_df(mm_df)
     # save
@@ -226,4 +229,8 @@ def run_all():
         
     return mm_df
 
-mm_df = run_all()
+#mm_df = run_all()
+# read in and normalize
+un_df = pd.read_csv(os.path.join(VAR_OUT, 'v0.1.0/mm_2_un.csv'))
+n_df = normalize_master_df(un_df)
+n_df.to_csv(os.path.join(VAR_OUT, 'v0.1.0/mm_2_n.csv'))
