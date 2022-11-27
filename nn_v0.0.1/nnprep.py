@@ -6,13 +6,35 @@ import numpy as np
 from sklearn import metrics
 import seaborn as sns
 import matplotlib.pyplot as plt
+from tqdm import tqdm
 
-DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output/'
+MAIN_DIR = '/home/oscar47/Desktop/astro101/data/g_band'
+DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output/v0.1.0'
 
 # read in csv
 global mm_n, unique_targets, targets
-mm_n = pd.read_csv(os.path.join(DATA_DIR,'folded_mm_per_norm.csv'))
-targets = mm_n['target'].to_list()
+mm_n = pd.read_csv(os.path.join(DATA_DIR,'mm_2_n.csv'))
+# remove first two columns
+mm_n = mm_n.iloc[:, 2:]
+#print(mm_n)
+mm_targ = pd.read_csv(os.path.join(DATA_DIR,'mm_2_n_targ.csv'))
+targets = mm_targ['target'].to_list()
+asassn = pd.read_csv(os.path.join(MAIN_DIR, 'asassn_rounded.csv'))
+# now we ned to find targets
+def get_targets(df):
+    targets = []
+    for i in tqdm(range(len(mm_n))):
+        name = df.loc[i, 'name']
+        asassn_row = asassn.loc[asassn['ID']==name]
+        target = asassn_row['ML_classification'].to_list()[0]
+        targets.append(target)
+    # append new column
+    df['target']=targets
+    # now save 
+    df.to_csv(os.path.join(DATA_DIR, 'mm_2_n_targ.csv'))
+
+#get_targets(mm_n)
+    
 #unique_targets = list(set(targets))
 unique_targets = ['RRC', 'EA', 'DCEP', 'DCEPS', 'YSO', 'CWA', 'EB', 'RRD', 'RRAB', 'HADS', 'M', 'ROT', 'VAR', 'L', 'EW', 'CWB', 'SR', 'RVA', 'DSCT']
 mm_n = mm_n.iloc[:, 4:]

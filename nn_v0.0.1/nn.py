@@ -12,7 +12,7 @@ import wandb
 from wandb.keras import WandbCallback
 
 # read in our data
-DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output/'
+DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output/v0.1.0'
 
 # check if keras recognizes gpu
 print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
