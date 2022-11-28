@@ -132,7 +132,7 @@ def init_var2_dfs():
         'peak peak var': [], 'lag1 auto': [],
         'I': [],'Ifi': [], 'J': [], 'K': [], 'L': [],
         'J time': [], 'I clipped': [],
-        'J clipped': [], 'CSSD': [],
+        'J clipped': [],
         'Ex': [], 'SB': [],'clipped stdev': []
         })
     return mm_df

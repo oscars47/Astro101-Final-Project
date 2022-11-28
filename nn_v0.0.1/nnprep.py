@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 
 MAIN_DIR = '/home/oscar47/Desktop/astro101/data/g_band'
-DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output/v0.1.0'
+DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output/v0.1.1'
 
 # read in csv
 global mm_n, unique_targets, targets
@@ -37,7 +37,6 @@ def get_targets(df):
     
 #unique_targets = list(set(targets))
 unique_targets = ['RRC', 'EA', 'DCEP', 'DCEPS', 'YSO', 'CWA', 'EB', 'RRD', 'RRAB', 'HADS', 'M', 'ROT', 'VAR', 'L', 'EW', 'CWB', 'SR', 'RVA', 'DSCT']
-mm_n = mm_n.iloc[:, 4:]
 
 def get_heatmap():
     # print(mm_n.head(5))
@@ -68,7 +67,7 @@ def make_1_hots(targets):
         target_1_hots.append(vec)
    return target_1_hots
 
-def prep_data():
+def prep_data(mm_n):
     # convert the targets into 1 hot encoded vectors
     
     # first split 50-50; return a dataset to be used to validate
@@ -113,7 +112,8 @@ def prep_data():
 
     
 
-prep_data()
+prep_data(mm_n)
+#get_heatmap()
 
 
 

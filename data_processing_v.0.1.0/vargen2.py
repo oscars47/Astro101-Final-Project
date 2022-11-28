@@ -1158,6 +1158,6 @@ class Variable2:
             'peak peak var': [self.peak_peak_var], 'lag1 auto': [self.lag1_auto],
             'I': [self.I],'Ifi': [self.Ifi], 'J': [self.J], 'K': [self.K], 'L': [self.L],
             'J time': [self.J_time], 'I clipped': [self.I_clipped],
-            'J clipped': [self.J_clipped], 'CSSD': [self.CSSD],
+            'J clipped': [self.J_clipped],
             'Ex': [self.Ex], 'SB': [self.SB],'clipped stdev': [self.clipped_std]
         }
