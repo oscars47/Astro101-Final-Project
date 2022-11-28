@@ -119,7 +119,7 @@ table_df = pd.read_csv(os.path.join(DATA_DIR, 'table_irsa_catalog_search_results
 # initiate var dfs for Variable2 object
 def init_var2_dfs():
     mm_df = pd.DataFrame({
-        'name': [], 'period': [], 'power': [], 'log_10 fap': [],
+        'name': [], 'target': [], 'period': [], 'power': [], 'log_10 fap': [],
         'T_t': [], 'T_p': [], 'T_2p': [], 
         'delta_t': [], 'delta_p': [],
         'j-k': [], 'h-k': [], 'skew': [],

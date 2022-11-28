@@ -10,18 +10,18 @@ from nnprep import *
 
 # load model
 MODEL_PATH = '/home/oscar47/Desktop/astro101/models'
-model = load_model(os.path.join(MODEL_PATH, 'wise32.h5'))
+model = load_model(os.path.join(MODEL_PATH, 'worthy47.h5'))
 
 # load input_x and output targets
-DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output'
+DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output/v0.1.0'
 
 
-input_x = np.load(os.path.join(DATA_DIR, 'v0.0.1/mm_n_extra.npy'))
-output_targets = np.load(os.path.join(DATA_DIR, 'v0.0.1/targets_extra.npy'))
+input_x = np.load(os.path.join(DATA_DIR, 'mm_n_extra.npy'))
+output_targets = np.load(os.path.join(DATA_DIR, 'targets_extra.npy'))
 
 
 #load asasn-sn variables in last 50%
-asassn = pd.read_csv(os.path.join(DATA_DIR, 'folded_mm_per.csv'))
+asassn = pd.read_csv(os.path.join(DATA_DIR, 'mm_2_n_targ.csv'))
 min_index = int(0.5*len(asassn))
 asassn = asassn.iloc[min_index:, :]
 
@@ -34,7 +34,7 @@ def convert_to_class(vec):
     return index, class_type, confidence
 
 # get class names
-object_names = asassn['id'].to_list()
+object_names = asassn['name'].to_list()
 
 # takes in input data which is array of arrays
 def predict_vars(model, names, input_x, output_targets, file_name):
@@ -82,7 +82,7 @@ def get_confusion_matrix(output_targets, output_preds):
     # plot
     plt.figure(figsize=(10,7))
     sns.heatmap(cm_norm_df, cmap = 'viridis', annot=True)
-    plt.title('Confusion matrix v0.0.1, accuracy = %f'%np.round(accuracy, 4), fontsize=20)
+    plt.title('Confusion matrix v0.1.0, accuracy = %f'%np.round(accuracy, 4), fontsize=20)
     plt.ylabel('Actual variable class', fontsize=16)
     plt.xlabel('Predicted variable class', fontsize=16)
     #plt.savefig(os.path.join(DATA_DIR, 'confusion_acc_v0.0.1.jpeg'))
