@@ -13,10 +13,10 @@ DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output/v0.1.1'
 
 # read in csv
 global mm_n, unique_targets, targets
-mm_n = pd.read_csv(os.path.join(DATA_DIR,'mm_2_n.csv'))
+mm_n = pd.read_csv(os.path.join(DATA_DIR,'mm_2_n _var1.csv'))
 # remove first two columns
 mm_n = mm_n.iloc[:, 2:]
-#print(mm_n)
+print(mm_n)
 mm_targ = pd.read_csv(os.path.join(DATA_DIR,'mm_2_n_targ.csv'))
 targets = mm_targ['target'].to_list()
 asassn = pd.read_csv(os.path.join(MAIN_DIR, 'asassn_rounded.csv'))
@@ -113,6 +113,28 @@ def prep_data(mm_n):
     
 
 prep_data(mm_n)
+
+
+# testing-------
+# period = mm_n['period']
+# power = mm_n['power']
+# fap = mm_n['log_10 fap']
+
+
+# mm_n_var1 = pd.DataFrame()
+# mm_n_var1['period'] = period
+
+# mm_n_var2 = pd.DataFrame()
+# mm_n_var2['period'] = period
+# mm_n_var2['power'] = power
+
+# mm_n_var3 = pd.DataFrame()
+# mm_n_var3['period'] = period
+# mm_n_var3['power'] = power
+# mm_n_var3['log10 fap'] = fap
+# print(fap)
+
+#prep_data(mm_n_var3)
 #get_heatmap()
 
 

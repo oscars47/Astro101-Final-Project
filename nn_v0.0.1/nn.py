@@ -12,7 +12,7 @@ import wandb
 from wandb.keras import WandbCallback
 
 # read in our data
-DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output/v0.1.0'
+DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output/v0.1.1'
 
 # check if keras recognizes gpu
 print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
@@ -42,7 +42,28 @@ def build_model(size1, size2, size3, size4, size5, dropout, learning_rate):
     model.add(layers.Dense(output_len))
     model.add(layers.Activation('softmax'))
 
-    optimizer = Adam(learning_rate = learning_rate)
+    optimizer = Adam(learning_rate = learning_rate, clipnorm=1)
+    model.compile(optimizer=optimizer, loss='categorical_crossentropy')
+
+    return model
+
+# build model functions--------------------------------
+def build_model_small(size1, dropout):
+    model = Sequential()
+
+    model.add(layers.Dense(size1))
+    model.add(layers.Dense(size1))
+    model.add(layers.Dense(size1))
+    
+ 
+    model.add(layers.Dropout(dropout))
+    model.add(layers.Dense(output_len))
+
+    # return len of class size
+    model.add(layers.Dense(output_len))
+    model.add(layers.Activation('softmax'))
+
+    optimizer = Adam()
     model.compile(optimizer=optimizer, loss='categorical_crossentropy')
 
     return model
@@ -73,14 +94,12 @@ def train(config=None):
 
 def train_manual():
     global model
-    model = build_model(128, 128, 128, 
-            128, 128, 
-            .1, .001)
+    model = build_model_small(256, 0.2)
     
     #now run training
     history = model.fit(
     train_x_ds, train_y_ds,
-    batch_size = 64,
+    batch_size = 128,
     validation_data=(val_x_ds, val_y_ds),
     epochs=10
     )
@@ -159,7 +178,7 @@ parameters_dict = {
     },
     # for build_dataset
      'batch_size': {
-       'values': [32, 64, 96, 128]
+       'values': [x for x in range(32, 161, 32)]
     },
     'size_1': {
        'distribution': 'int_uniform',
@@ -200,10 +219,10 @@ parameters_dict = {
 sweep_config['parameters'] = parameters_dict 
 
 # login to wandb----------------
-wandb.init(project="Astro101_Project_v2", entity="oscarscholin")
+wandb.init(project="Astro101_Project_NewData2", entity="oscarscholin")
 
 # initialize sweep agent
-sweep_id = wandb.sweep(sweep_config, project='Astro101_Project_v2', entity="oscarscholin")
+sweep_id = wandb.sweep(sweep_config, project='Astro101_Project_NewData2', entity="oscarscholin")
 wandb.agent(sweep_id, train, count=100)
 
 #train_manual()
