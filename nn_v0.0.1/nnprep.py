@@ -13,7 +13,7 @@ DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output/v0.1.1'
 
 # read in csv
 global mm_n, unique_targets, targets
-mm_n = pd.read_csv(os.path.join(DATA_DIR,'mm_2_n _var1.csv'))
+mm_n = pd.read_csv(os.path.join(DATA_DIR,'mm_2_n _var1.csv')) # var1 file doesn't have log10 fap parameter which caused issue
 # remove first two columns
 mm_n = mm_n.iloc[:, 2:]
 print(mm_n)
