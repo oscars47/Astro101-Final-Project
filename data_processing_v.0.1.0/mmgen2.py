@@ -64,6 +64,8 @@ table = pd.read_csv(os.path.join(DATA_DIR, 'table_rounded.csv'))
 
 # helper files to amend datasets----------------------------
 # export ra and dec to make ascii table given pd dataframe
+# use https://irsa.ipac.caltech.edu/cgi-bin/Gator/nph-dd to extract color info
+# when you use output from function below, need to delete top and bottom +----+ decorations, then cut the |ra dec| |float float| lines, cntrl-f '|'| replace ' ', then paste back and submit to online portal
 def get_ascii(df, save_path):
     #df = df.head(10)
 
