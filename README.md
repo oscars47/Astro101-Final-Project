@@ -1,5 +1,5 @@
 # Astro101-Final-Project
-A repo for @ghirsch123 and @oscars47's astro101 final project (Phil Choi, Pomona College) using machine learning on variable stars.
+A repo for @oscars47's and @ghirsch123 Astro101 final project (Phil Choi, Pomona College) using machine learning on variable stars.
 
 ## Project Goals:
 1. We want to test the viability of 23 variability functions we explored over the summer via creating a neural network to classify the types of variable stars in the ASAS-SN data.
