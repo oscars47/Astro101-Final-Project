@@ -8,14 +8,18 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
+from sklearn.decomposition import PCA
+
 MAIN_DIR = '/home/oscar47/Desktop/astro101/data/g_band'
 DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output/v0.1.1'
 
 # read in csv
 global mm_n, unique_targets, targets
 mm_n = pd.read_csv(os.path.join(DATA_DIR,'mm_2_n _var1.csv')) # var1 file doesn't have log10 fap parameter which caused issue
+#mm_n = pd.read_csv(os.path.join(DATA_DIR,'mm_2_n.csv')) # var1 file doesn't have log10 fap parameter which caused issue
 # remove first two columns
 mm_n = mm_n.iloc[:, 2:]
+#mm_n = mm_n.iloc[:, 6:]
 print(mm_n)
 mm_targ = pd.read_csv(os.path.join(DATA_DIR,'mm_2_n_targ.csv'))
 targets = mm_targ['target'].to_list()
@@ -136,6 +140,10 @@ prep_data(mm_n)
 
 #prep_data(mm_n_var3)
 #get_heatmap()
+
+# pca = PCA(n_components=35)
+# pca.fit(mm_n)
+# print(sum(pca.explained_variance_))
 
 
 

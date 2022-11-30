@@ -19,7 +19,6 @@ DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output/v0.1.1'
 input_x = np.load(os.path.join(DATA_DIR, 'mm_n_extra.npy'))
 output_targets = np.load(os.path.join(DATA_DIR, 'targets_extra.npy'))
 
-
 #load asasn-sn variables in last 50%
 asassn = pd.read_csv(os.path.join(DATA_DIR, 'mm_2_n_targ.csv'))
 min_index = int(0.5*len(asassn))
@@ -39,6 +38,7 @@ object_names = asassn['name'].to_list()
 # takes in input data which is array of arrays
 def predict_vars(model, names, input_x, output_targets, file_name):
     results = model.predict(input_x) # predict!!
+    print(results)
     # initialize lists to hold results
     output_classes = []
     output_classes_indices = []
@@ -68,6 +68,7 @@ def predict_vars(model, names, input_x, output_targets, file_name):
     return output_classes_indices, output_target_indices
 
 def get_confusion_matrix(output_targets, output_preds):
+    #print(output_preds)
     # create a confusion matrix to illustrate results
     cm = confusion_matrix(output_targets, output_preds)
     cm_df = pd.DataFrame(cm, index = unique_targets, columns = unique_targets)
@@ -91,5 +92,4 @@ def get_confusion_matrix(output_targets, output_preds):
 file_name = 'volcanic55_results.csv'
 output_classes_indices, output_target_indices = predict_vars(model, object_names, input_x, output_targets, file_name)
 get_confusion_matrix(output_classes_indices, output_target_indices)
-
 
