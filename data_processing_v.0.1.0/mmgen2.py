@@ -233,6 +233,6 @@ def run_all():
 
 #mm_df = run_all()
 # read in and normalize
-un_df = pd.read_csv(os.path.join(VAR_OUT, 'v0.1.0/mm_2_un.csv'))
-n_df = normalize_master_df(un_df)
-n_df.to_csv(os.path.join(VAR_OUT, 'v0.1.0/mm_2_n.csv'))
+# un_df = pd.read_csv(os.path.join(VAR_OUT, 'v0.1.0/mm_2_un.csv'))
+# n_df = normalize_master_df(un_df)
+# n_df.to_csv(os.path.join(VAR_OUT, 'v0.1.0/mm_2_n.csv'))
