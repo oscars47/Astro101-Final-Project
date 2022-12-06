@@ -260,13 +260,13 @@ def plot_tsne_test(c_filename, name, percent, perplexity, n_iterations):
 def plot_preds(c_filename, c_alg, percent, perplexity, n_iterations):
     df = pd.read_csv(os.path.join(OUTPUT_DIR, c_filename))
 
-    fig = px.scatter_3d(df, x='pc1', y='pc2', z='pc3',
+    fig = px.scatter_3d(df,x='tsne1', y='tsne2', z='tsne3',
               color='targets')
     fig.update_layout(title=c_alg+"TARGET TSNE on " + str(np.round(percent*100, 2)) + " of " + name + " Data for Perplexity=" + str(np.round(perplexity, 2)) +  ", N_iterations=" + str(np.round(n_iterations, 2)), autosize=False,
                     width=1000, height=1000)
     fig.show()
 
-    fig = px.scatter_3d(df, x='pc1', y='pc2', z='pc3',
+    fig = px.scatter_3d(df, x='tsne1', y='tsne2', z='tsne3',
               color='predictions')
     fig.update_layout(title=c_alg+"PREDICTIONS TSNE on " + str(np.round(percent*100, 2)) + " of " + name + " Data for Perplexity=" + str(np.round(perplexity, 2)) +  ", N_iterations=" + str(np.round(n_iterations, 2)), autosize=False,
                     width=1000, height=1000)
