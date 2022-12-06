@@ -7,12 +7,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
+from sklearn.neighbors import NearestNeighbors
+from sklearn.cluster import DBSCAN
+from kneed import KneeLocator
+from collections import Counter
 import plotly.express as px
 from tqdm import tqdm
 
 # set directories to normalized data
 DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output/v0.1.1'
 OUTPUT_DIR = os.path.join(DATA_DIR, 'unsupervised')
+CLUSTER_DIR = os.path.join(OUTPUT_DIR, 'cluster')
 
 # read in data with actual targets for verification
 mm_n = pd.read_csv(os.path.join(DATA_DIR, 'mm_2_n_targ_var.csv'))
@@ -54,6 +59,78 @@ def run_optics_tsne(df, min_samples, outname):
     # add back in targets with predictions
     df['targets']=targets
     df['predictions']=labels
+
+    # now save as csv
+    df.to_csv(os.path.join(CLUSTER_DIR, outname))
+
+# run dbscan on tsne or pca data
+def run_dbscan_tsne(df, min_pts, outname):
+    # save targets
+    targets = df['targets'].to_list()
+    # now remove them from the df
+    df = df.iloc[:, :-1]
+
+    # now call DBSCAN-----------------------
+    #n_neighbors in sklearn.neighbors.NearestNeighbors to be equal to 2xN - 1, 
+    nbrs = NearestNeighbors(n_neighbors=min_pts-1).fit(df)
+
+    # Find the k-neighbors of a point
+    neigh_dist, neigh_ind = nbrs.kneighbors(df)
+
+    # sort the neighbor distances (lengths to points) in ascending order
+    # axis = 0 represents sort along first axis i.e. sort along row
+    sort_neigh_dist = np.sort(neigh_dist, axis=0)
+    
+    #now plot the kNN
+    #look for the bend in the curve--this will give optimal value of epsilon
+    #the elbow is thepoint farthest from a straight line
+
+    k_dist = sort_neigh_dist[:, min_pts-2]
+    
+    #use kneed package to find knee points-----
+    #https://github.com/arvkevi/kneed
+    kn = KneeLocator(
+    range(0, len(df)),
+    k_dist,
+    curve='convex',
+    direction='increasing',
+    interp_method='interp1d',
+    )
+    knee_value = kn.knee
+    print('the elbow of the kNN curve occurs at: ', knee_value, k_dist[knee_value])
+    
+    plt.plot(k_dist)
+    plt.ylabel("k-NN distance")
+    plt.xlabel("Sorted observations")
+    plt.title('kNN plot, elbow:' + str(knee_value))
+    plt.savefig(os.path.join(CLUSTER_DIR, 'kNN_kk.jpeg'))
+    
+    #set value of epsilon
+    e = k_dist[knee_value]
+    
+    #cluster!!------
+    clusters = DBSCAN(eps=e, min_samples = min_pts).fit(df)
+    # get cluster labels
+    clusters_list = clusters.labels_
+    
+    # check unique clusters
+    # -1 value represents noisy points could not assigned to any cluster
+    unique_clusters = list(set(clusters.labels_))
+    print('clusters:', unique_clusters)
+    
+    #get each cluster size
+    Counter(clusters_list)
+    
+    #assign clusters to scaled data
+    df_clustered = df.copy()
+    df_clustered['cluster'] = clusters_list
+    #print(df)
+    
+    #print(df_clustered)
+
+    # add back in targets with predictions
+    df['targets']=targets
+    df['predictions']=clusters_list
 
     # now save as csv
     df.to_csv(os.path.join(OUTPUT_DIR, outname))
@@ -167,38 +244,31 @@ def get_TSNE_clipped(mm_r, percent, perplexity, n_iterations, outname):
     print('saving!')
     tsne_df.to_csv(os.path.join(OUTPUT_DIR, outname))
 
-# function to plot dimensionally-reduced data with complete filename
-def plot_tsne_test(c_filename, percent, perplexity, n_iterations):
+# function to plot dimensionally-reduced data with complete filename----------
+# name is whether we're running clipped or no clip
+def plot_tsne_test(c_filename, name, percent, perplexity, n_iterations):
     df = pd.read_csv(os.path.join(OUTPUT_DIR, c_filename))
     # get list of columns
     col_list = df.columns
 
     fig = px.scatter_3d(df, x='tsne1', y='tsne2', z='tsne3', color='targets')
-    fig.update_layout(title='TSNE on %f of Data for Perplexity=%f, N_iterations=%f'%((np.round(percent*100, 2), np.round(perplexity, 2), np.round(n_iterations, 2))), autosize=False,
-                    width=1000, height=1000)
+    fig.update_layout(title="TSNE on " + str(np.round(percent*100, 2)) + " of " + name + " Data for Perplexity=" + str(np.round(perplexity, 2)) +  ", N_iterations=" + str(np.round(n_iterations, 2)), autosize=False, width=1000, height=1000)
     fig.show()
 
 # function for visualizing results---------------------------
-def plot_preds(filename, var, percent):
-    mm_r = pd.read_csv(os.path.join(OUTPUT_DIR, filename))
-    predictions = mm_r['prediction'].to_list() # get targets and preds
-    targs = mm_r['targets'].to_list()
+#c_alg: cluster algorithm
+def plot_preds(c_filename, c_alg, percent, perplexity, n_iterations):
+    df = pd.read_csv(os.path.join(OUTPUT_DIR, c_filename))
 
-    # read in pca
-    name = filename.split('.') # remove csv so we can concatenate pc
-    pc_df = pd.read_csv(os.path.join(OUTPUT_DIR, name[0]+'_pc.csv'))
-    pc_df['predictions']=predictions
-    pc_df['targs']=targs
-
-    fig = px.scatter_3d(pc_df, x='pc1', y='pc2', z='pc3',
-              color='predictions')
-    fig.update_layout(title="PCA on %f Percent of Data, Predictions (var=%f)"%(np.round(percent*100, 2), np.round(var, 4)), autosize=False,
+    fig = px.scatter_3d(df, x='pc1', y='pc2', z='pc3',
+              color='targets')
+    fig.update_layout(title=c_alg+"TARGET TSNE on " + str(np.round(percent*100, 2)) + " of " + name + " Data for Perplexity=" + str(np.round(perplexity, 2)) +  ", N_iterations=" + str(np.round(n_iterations, 2)), autosize=False,
                     width=1000, height=1000)
     fig.show()
 
-    fig = px.scatter_3d(pc_df, x='pc1', y='pc2', z='pc3',
-              color='targs')
-    fig.update_layout(title="PCA on %f Percent of Data, Targets (var=%f)"%(np.round(percent*100, 2), np.round(var, 4)), autosize=False,
+    fig = px.scatter_3d(df, x='pc1', y='pc2', z='pc3',
+              color='predictions')
+    fig.update_layout(title=c_alg+"PREDICTIONS TSNE on " + str(np.round(percent*100, 2)) + " of " + name + " Data for Perplexity=" + str(np.round(perplexity, 2)) +  ", N_iterations=" + str(np.round(n_iterations, 2)), autosize=False,
                     width=1000, height=1000)
     fig.show()
 
@@ -239,16 +309,49 @@ def visualize_objs(percent):
 # run_PCA(min_samples, percent, filename_pca)
 # plot_preds(filename, var, percent)
 
+# percent=.25
+# perplexities=[200]
+# n_iterations=[1000, 5000]
+# for n_iter in tqdm(n_iterations):# loop through all possibilities
+#     for perplex in tqdm(perplexities):
+#         # compute tsne for both full and clipped data
+#         outname_full = 'tsne_'+str(percent)+'_'+str(perplex)+'_'+str(n_iter)+'_2.csv'
+#         outname_clip='tsne_'+str(percent)+'_'+str(perplex)+'_'+str(n_iter)+'_2_clipped.csv'
+#         name_full = "Full2"
+#         name_clip = "Clipped2"
+#         # get_TSNE(mm_d, percent, perplex, n_iter, outname_full)
+#         # get_TSNE_clipped(mm_d, percent, perplex, n_iter, outname_clip)
+
+#         plot_tsne_test(outname_clip, name_full, percent, perplex, n_iter)
+#         plot_tsne_test(outname_full, name_clip, percent, perplex, n_iter)
+
+
+# going through specific files
+# percent=.25
+# files = ['tsne_0.25_200.csv', 'tsne_0.25_200_1000_2.csv', 'tsne_0.25_200_1000_clipped.csv', 'tsne_0.25_200_1000_2_clipped.csv', 'tsne_0.25_200_5000.csv', 'tsne_0.25_200_5000_2.csv', 'tsne_0.25_200_5000_clipped.csv', 'tsne_0.25_200_5000_2_clipped.csv']
+# perplexities = [200 for i in range(8)]
+# n_iterations = [1000 for i in range(4)] + [5000 for i in range(4)]
+# names = ['Full1', 'Full2', 'Clipped1', 'Clipped2', 'Full1', 'Full2', 'Clipped1', 'Clipped2']
+# for i in range(len(files)):
+#     plot_tsne_test(files[i], names[i], percent, perplexities[i], n_iterations[i])
+
+# computing OPTICS and DBSCAN
+files = ['tsne_0.25_200.csv', 'tsne_0.25_200_1000_clipped.csv' , 'tsne_0.25_200_5000.csv', 'tsne_0.25_200_5000_clipped.csv']
+names = ['Full', 'Clipped', 'Full', 'Clipped']
+perplexity = 200
 percent=.25
-perplexities=[75, 200, 500, 1000]
-n_iterations=[1000, 5000]
-for n_iter in tqdm(n_iterations):# loop through all possibilities
-    for perplex in tqdm(perplexities):
-        outname='tsne_'+str(percent)+'_'+str(perplex)+'_'+str(n_iter)+'_clipped.csv'
-        get_TSNE_clipped(mm_d, percent, perplex, n_iter, outname)
-        plot_tsne_test(outname, percent, perplex, n_iter)
+n_iterations =[1000, 1000, 5000, 5000]
+min_pts = 6 # 2 * num features
+for i, file in enumerate(files):
+    df = pd.read_csv(os.path.join(OUTPUT_DIR, file))
+    outname_optics = 'optics_'+str(percent)+'_'+names[i]+'_'+str(perplexity)+'_'+str(n_iterations[i])+'.csv'
+    outname_dbscan = 'dbscan'+str(percent)+'_'+names[i]+'_'+str(perplexity)+'_'+str(n_iterations[i])+'.csv'
+    
+    run_optics_tsne(df, min_pts, outname_optics)
+    run_dbscan_tsne(df, min_pts, outname_dbscan)
 
-
+    plot_preds(outname_optics, 'OPTICS', percent, perplexity, n_iterations[i])
+    plot_preds(outname_dbscan, 'DBSCAN', percent, perplexity, n_iterations[i])
 
 # for trying a range of perplexities with fixed n_iterations
 # perplexity_ls = [30, 50, 75, 200, 500, 1000, 2000]
