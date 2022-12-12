@@ -40,7 +40,7 @@ class Variable2:
 
         # initialize each of var indices--- from asassn paper
         self.period, self.power, self.fap = self.get_LS_period()
-        self.log_fap = np.log10(self.fap+1e-9)# add small correction factor so we don't take log of 0
+        #self.log_fap = np.log10(self.fap+1e-9)# add small correction factor so we don't take log of 0
         self.T_t, self.T_p, self.T_2p, self.delta_t, self.delta_p = self.get_LKLS()
         self.j_k, self.h_k = self.get_color()
         self.skew = self.get_skew()

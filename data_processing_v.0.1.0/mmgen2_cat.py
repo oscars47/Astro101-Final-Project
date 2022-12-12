@@ -1,4 +1,4 @@
-# file to generate the monster matrix (mm) of var indices data for each lc object
+# file to generate the monster matrix (mm) of the contact binaries
 # by @oscars47 and @ghirsch123
 
 import os
@@ -11,56 +11,65 @@ from lcgen import get_lc
 from vargen import Variable
 from vargen2 import Variable2
 
+
+# NEED TO DO: 
+# 1. extract numerical ids from the Catalina phot, get ra and dec -- weird bc the csv is all one columns
+# 2. generate asii table, then get color csv
+# 3. run objects through variable generator
+
+
+
+
+
+
+
+
+
 # set directories, define helper functions for conversions
 
-DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band'
-LC_DIR = os.path.join(DATA_DIR, 'g_band_lcs')
-LC_OUT = os.path.join(DATA_DIR, 'lc_output')
+DATA_DIR = '/home/oscar47/Desktop/astro101/data/contact_binaries'
 VAR_OUT = os.path.join(DATA_DIR, 'var_output')
 
 # confirm we have each of these directories
-if not(os.path.isdir(DATA_DIR)):
-    os.makedirs(DATA_DIR)
-if not(os.path.isdir(LC_DIR)):
-    os.makedirs(LC_DIR)
-if not(os.path.isdir(LC_OUT)):
-    os.makedirs(LC_OUT)
 if not(os.path.isdir(VAR_OUT)):
     os.makedirs(VAR_OUT)
 
-# make list of all LC_DIR files
-lc_files = os.listdir(LC_DIR)
+# read in datasets---------------
+vars = pd.read_csv(os.path.join(DATA_DIR, 'CatalinaVars.csv'))
+lc_df = pd.read_csv(os.path.join(DATA_DIR, 'AllVar.phot.csv'))
 
-def get_file(name):
-    temp_list = []
-    temp_file = ''
-    temp_list = name.split(' ')
-    temp_file += temp_list[0] +'_' + temp_list[1] +'.dat'
-    return temp_file
+#print(vars.head(10))
 
-def get_name(file):
-    temp_list=[]
-    temp_name = ''
-    temp_list = file.split('.dat')
-    temp_name = temp_list[0]
-    temp_list = temp_name.split('_')
-    temp_name = temp_list[0] +' ' + temp_list[1]
-    return temp_name
+# need to extract numerial ides from lc_df to build df
+def build_cat_main():
+    ids = []
+    ras =[]
+    decs = []
+    for i in range(len(vars)):
+        row = vars.iloc[i][0]
+        s_row = row.split('  ')
+        id = int(s_row[1])
+        ra = float(s_row[2]) # need to convert ra and dec into decimal from sexigesimal!!
+        dec = float(s_row[3])
+        r_ra = np.round(ra, 5)
+        r_dec = np.round(dec, 5)
+        ids.append(id)
+        ras.append(r_ra)
+        decs.append(r_dec)
 
+    # create new dataframe
+    cat_main = pd.DataFrame()
+    cat_main['id'] = ids
+    cat_main['ra'] = ras
+    cat_main['dec'] = decs
+    # now save it
+    cat_main.to_csv(os.path.join(DATA_DIR, 'cat_main.csv'))
 
-# to get the names, first split by '.dat' and remove final element (.dat), recombine; then split based on '_' and replace with ' '
-lc_names = []
-for lc in lc_files:
-    temp_name = get_name(lc)
-    lc_names.append(temp_name)
-
-# get unique classes of variable objects---------------
-vars = pd.read_csv(os.path.join(DATA_DIR, 'asassn_variables_x.csv'))
-var_unique = list(vars['ML_classification'].unique())
+build_cat_main()
 
 # load in rounded dfs
-asassn = pd.read_csv(os.path.join(DATA_DIR, 'asassn_rounded.csv'))
-table = pd.read_csv(os.path.join(DATA_DIR, 'table_rounded.csv'))
+# asassn = pd.read_csv(os.path.join(DATA_DIR, 'asassn_rounded.csv'))
+# table = pd.read_csv(os.path.join(DATA_DIR, 'table_rounded.csv'))
 
 # helper files to amend datasets----------------------------
 # export ra and dec to make ascii table given pd dataframe
@@ -89,20 +98,20 @@ def get_ascii(df, save_path):
     with open(os.path.join(save_path, 'test.txt'), 'w') as f:
         f.write(data)
 
-#get_ascii(vars, DATA_DIR)
+get_ascii(vars, DATA_DIR)
         
 # add rounded ra, dec column to asassn
-def add_rounding_asassn(df):
-    ra = df['RAJ2000'].to_list()
-    dec = df['DEJ2000'].to_list()
+def add_rounding_cat(df):
+    ra = df['Ra'].to_list()
+    dec = df['Dec'].to_list()
     r_ra = np.round(ra, 5)
     r_dec = np.round(dec, 5)
     df['rounded ra'] = r_ra
     df['rounded dec'] = r_dec
 
-    df.to_csv(os.path.join(DATA_DIR, 'asassn_rounded.csv'))
+    df.to_csv(os.path.join(DATA_DIR, 'cat_rounded.csv'))
 
-#add_rounding_asassn(vars)
+add_rounding_cat(vars)
 
 # add rounding to table output
 def add_rounding_table(df):
