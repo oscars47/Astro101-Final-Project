@@ -11,14 +11,17 @@ Link to datasets generated via the data_processing pipeline: https://drive.googl
 ## Samples of results
 ![final_flow_down](https://user-images.githubusercontent.com/106777951/208241323-d30c3cb9-f709-4421-ba13-9eae762af961.png)
 Flow chart for the code in this project.
+
 ![confusion_0 1 1_mini](https://user-images.githubusercontent.com/106777951/208241192-3c327e34-982d-48a4-afd4-68f249bf2880.png)
 Confusion matrix for version 0.1.1 mini.
+
 ![mini-1](https://user-images.githubusercontent.com/106777951/208241458-eb0d4c06-a0fe-41c0-925d-2274924ddab1.png)
 3D plot of v0.1.1 mini confusion matrix.
 
 <img width="529" alt="just_periodic_1000" src="https://user-images.githubusercontent.com/106777951/208241328-959f207e-3066-4211-ad88-96cc9062c37b.png">
 t-SNE plot of solely periodic variables.
-![linear_random_per](https://user-images.githubusercontent.com/106777951/208241336-5811d125-bc88-4bb4-b898-e621f1c0c372.png)
+
+![linear_random_per](https://user-images.githubusercontent.com/106777951/208241498-b1c98b36-0d33-454b-ba30-29f69fde2133.png)
 Comparison of sample sample of objects' ASAS-SN and Monster Matrix periods.
 
 
