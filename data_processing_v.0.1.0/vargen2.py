@@ -427,7 +427,8 @@ class Variable2:
             return 1
         else:
             return -1  
-                
+
+    # flux-independent  
     def get_Ifi(self):
         #if only 1 filter, assign odd indices to one sample, even to another
         #but use f1_mean_mag = f2_mean_mag over all the N measurements

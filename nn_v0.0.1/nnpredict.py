@@ -12,7 +12,7 @@ from nnprep import *
 
 # load model
 MODEL_PATH = '/home/oscar47/Desktop/astro101/models'
-model = load_model(os.path.join(MODEL_PATH, 'volcanic55.h5'))
+model = load_model(os.path.join(MODEL_PATH, 'whole59.h5'))
 
 # load input_x and output targets
 DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band/var_output/v0.1.1'
@@ -84,13 +84,13 @@ def get_confusion_matrix(output_targets, output_preds):
     cm_norm_df = cm_df / cm_df.sum() # divide each column by the sum for that column to determine relative precentage
     cm_norm_matrix = np.array(cm_norm_df)
     # plot
-    # plt.figure(figsize=(10,7))
-    # sns.heatmap(cm_norm_df, cmap = 'viridis', annot=True)
-    # plt.title('Confusion matrix v0.1.1, accuracy = %f'%np.round(accuracy, 4), fontsize=20)
-    # plt.ylabel('Actual variable class', fontsize=16)
-    # plt.xlabel('Predicted variable class', fontsize=16)
-    # #plt.savefig(os.path.join(DATA_DIR, 'confusion_acc_v0.0.1.jpeg'))
-    # plt.show()
+    plt.figure(figsize=(10,7))
+    sns.heatmap(cm_norm_df, cmap = 'viridis', annot=True)
+    plt.title('Confusion matrix v0.1.1-mini, accuracy = %f'%np.round(accuracy, 4), fontsize=20)
+    plt.ylabel('Actual variable class', fontsize=16)
+    plt.xlabel('Predicted variable class', fontsize=16)
+    #plt.savefig(os.path.join(DATA_DIR, 'confusion_acc_v0.0.1.jpeg'))
+    plt.show()
     tuple_ls = []
     for i in range(len(unique_targets)):
         for j in range(len(unique_targets)):
@@ -112,11 +112,11 @@ def get_confusion_matrix(output_targets, output_preds):
 
 
     fig = go.Figure(go.Surface(x=xi,y=yi,z=Z, surfacecolor=C, colorscale='viridis'))
-    fig.update_layout(title='Confusion matrix v0.1.1, accuracy = %f'%np.round(accuracy, 4), autosize=False,
+    fig.update_layout(title='Confusion matrix v0.1.1-mini, accuracy = %f'%np.round(accuracy, 4), autosize=False,
                     width=1000, height=1000)
     fig.show()
 
-file_name = 'volcanic55_results.csv'
+file_name = 'whole59_results.csv'
 output_classes_indices, output_target_indices = predict_vars(model, object_names, input_x, output_targets, file_name)
 get_confusion_matrix(output_classes_indices, output_target_indices)
 

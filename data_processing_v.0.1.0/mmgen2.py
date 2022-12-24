@@ -7,8 +7,7 @@ import pandas as pd
 import numpy as np
 from prettytable import PrettyTable
 # import files we've created
-from lcgen import get_lc
-from vargen import Variable
+from lcgen import get_lc, get_lc_fold
 from vargen2 import Variable2
 
 # set directories, define helper functions for conversions
@@ -17,6 +16,7 @@ DATA_DIR = '/home/oscar47/Desktop/astro101/data/g_band'
 LC_DIR = os.path.join(DATA_DIR, 'g_band_lcs')
 LC_OUT = os.path.join(DATA_DIR, 'lc_output')
 VAR_OUT = os.path.join(DATA_DIR, 'var_output')
+PER_COMPARE = os.path.join(DATA_DIR, 'per_compare')
 
 # confirm we have each of these directories
 if not(os.path.isdir(DATA_DIR)):
@@ -231,8 +231,65 @@ def run_all():
         
     return mm_df
 
+# cal functions to generate data--------------------
 #mm_df = run_all()
 # read in and normalize
 #un_df = pd.read_csv(os.path.join(VAR_OUT, 'v0.1.0/mm_2_un.csv'))
 #n_df = normalize_master_df(un_df)
 #n_df.to_csv(os.path.join(VAR_OUT, 'v0.1.0/mm_2_n.csv'))
+
+
+# for lc generation-------
+def compare_lc(vars, mm):
+    # use asassn and mm
+    print('initializing!')
+    # go through list of names; compute Period and period difference; bin into close or far datasets
+    # initialize lists of tuples close and far: (name, target, period_vars, period_mm)
+    close = []
+    far = []
+    names = vars['ID'].to_list()
+    for name in names:
+        # find each name in vars and mm; get period
+        vars_name_per = vars.loc[vars['ID']==name]['Period'].to_list()[0]
+        mm_name_per = mm.loc[mm['name']==name]['period'].to_list()[0]
+
+        # now compute diff; if signifiant, assign to one of the lists
+        if (abs(vars_name_per - mm_name_per) <= 0.5) and (len(close) < 3):
+            # get target
+            print('close', vars_name_per, mm_name_per)
+            target = vars.loc[vars['ID']==name]['ML_classification'].to_list()[0]
+            # append info to close list
+            close.append((name, target, vars_name_per, mm_name_per))
+        elif (abs(vars_name_per - mm_name_per) > 10) and (len(far) < 3):
+            # get target
+            print('far', vars_name_per, mm_name_per)
+            target = vars.loc[vars['ID']==name]['ML_classification'].to_list()[0]
+            # append info to close list
+            far.append((name, target, vars_name_per, mm_name_per))
+        
+        # now to check to make sure len of both lists
+        if (len(close) >= 3) and (len(far) >= 3):
+            break
+    print('built lists!')
+    # now that we have our complete lists, can do the plotting
+    combined_ls = [close, far]
+    for ls in combined_ls:
+        for tuple in tqdm(ls):
+            # plot each tuple for close and far
+            name = tuple[0]
+            target = tuple[1]
+            vars_per = tuple[2]
+            mm_per = tuple[3]
+            # get file
+            file = get_file(name)
+
+            # call lcgen -- no folding
+            get_lc(file, name, target, LC_DIR, PER_COMPARE)
+            # folding, asassn
+            get_lc_fold(file, name, target, LC_DIR, vars_per, PER_COMPARE, 'ASAS-SN')
+            # folding, mm
+            get_lc_fold(file, name, target, LC_DIR, mm_per, PER_COMPARE, 'MM')
+
+# read in mm
+mm = pd.read_csv(os.path.join(VAR_OUT, 'v0.1.0', 'mm_2_un.csv'))
+compare_lc(vars, mm)
